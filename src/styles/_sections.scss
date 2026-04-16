@@ -1,0 +1,337 @@
+/* src/styles/_sections.scss */
+
+/* ─── 1. CUSTOM CURSOR ──────────────────────────────────────── */
+#cursor {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  pointer-events: none;
+}
+
+#cursor-dot {
+  width: 8px; height: 8px; background: var(--gold);
+  border-radius: 50%; transform: translate(-50%, -50%);
+  transition: transform 0.1s, background 0.4s;
+}
+
+#cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--gold); border-radius: 50%;
+  transform: translate(-50%, -50%); pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.18s ease, width 0.2s, height 0.2s, border-color 0.4s;
+  opacity: 0.6;
+}
+
+body.hovering #cursor-ring {
+  width: 56px; height: 56px; border-color: var(--gold); opacity: 1;
+}
+
+/* ─── 2. HERO ───────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 8rem 0 4rem; position: relative; overflow: hidden;
+
+  .hero-bg-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%);
+    transition: background-image 0.4s;
+  }
+
+  .hero-glow {
+    position: absolute; z-index: 0;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+    &::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1.05;
+    letter-spacing: -0.02em; margin-bottom: 1.2rem; color: var(--text);
+    overflow: visible; padding-bottom: 0.08em;
+
+    em {
+      font-style: normal; color: var(--gold); position: relative; display: inline-block;
+      &::after { content: ''; position: absolute; bottom: 0.05em; left: 0; right: 0; height: 3px; background: var(--gold); opacity: 0.4; }
+    }
+  }
+
+  .hero-name-kr {
+    display: inline-block; position: relative; color: var(--text);
+    &::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 4px; background: var(--gold); border-radius: 2px; opacity: 0.55; }
+  }
+
+  .hero-desc { font-size: 1.1rem; color: var(--text-dim); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-faint);
+    letter-spacing: 0.1em; text-transform: uppercase; z-index: 1;
+    animation: scrollBounce 2s ease-in-out infinite;
+
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
+  }
+
+  .hero-float {
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 1rem; opacity: 0.7; z-index: 1;
+
+    .float-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 0.9rem 1.2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--text-dim); animation: floatAnim 4s ease-in-out infinite; min-width: 180px;
+      transition: background var(--transition), border-color var(--transition);
+      &:nth-child(2) { animation-delay: 1.3s; }
+      &:nth-child(3) { animation-delay: 2.6s; }
+
+      .float-card-label { color: var(--gold); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50%       { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); } 
+  50% { transform: translateX(-50%) translateY(6px); } 
+}
+@keyframes floatAnim { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-8px); } 
+}
+
+/* ─── 3. TECH STACK ─────────────────────────────────────────── */
+.tech-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.tech-group {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); }
+
+  .tech-group-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+  .tech-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tech-pill {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 0.3rem 0.7rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); transition: var(--transition);
+    &.hot { border-color: rgba(240, 192, 64, 0.4); color: var(--gold); background: var(--gold-dim); }
+    &:hover { color: var(--text); border-color: var(--text-faint); }
+  }
+}
+[data-theme="light"] .tech-pill.hot { border-color: rgba(184, 120, 0, 0.35); }
+
+/* ─── 4. PROJECTS ───────────────────────────────────────────── */
+.project-grid { display: grid; gap: 1.5rem; }
+
+.project-card {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: grid; grid-template-columns: 1fr;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+  &:hover { border-color: var(--gold-glow); transform: translateY(-4px); }
+
+  &.featured { grid-template-columns: 1fr 1fr; }
+  &.featured-flip { 
+    grid-template-columns: 1fr 1fr; 
+    .project-body { order: 1; }
+    .project-visual { order: 2; }
+  }
+}
+
+/* 프로젝트 Visual 공통 */
+.project-visual { 
+  background: #13131f; display: flex; align-items: center; justify-content: center; min-height: 220px; position: relative; overflow: hidden; 
+}
+.project-card.featured .project-visual { min-height: 100%; }
+
+.project-visual-inner { 
+  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #44445a; line-height: 1.8; padding: 2rem; position: relative; z-index: 1; width: 100%; 
+}
+
+/* Visual 내부 요소들 */
+.code-line { display: flex; gap: 0.8rem; }
+.code-num { color: #44445a; min-width: 1.5rem; }
+.code-kw { color: #a78bfa; }
+.code-fn { color: #60a5fa; }
+.code-comment { color: #44445a; font-style: italic; }
+.code-line-img { display: flex; gap: 0.8rem; }
+.banner { width: 60%; border-radius: 20px; margin: 10%; }
+.visual-badge { position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: #08080e; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; }
+
+/* 프로젝트 Body 공통 */
+.project-body { padding: 2rem; }
+.project-num { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+.project-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 0.8rem; line-height: 1.2; color: var(--text); }
+.project-desc { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem; line-height: 1.7; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.2rem 0.55rem; background: var(--blue-dim); border: 1px solid var(--blue-tag); border-radius: 3px; color: var(--blue); }
+
+/* PSR 카드 영역 */
+.psr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem; }
+.psr-card { background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem; transition: background var(--transition); }
+.psr-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.psr-text { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+
+/* 프로젝트 하단 버튼 */
+.project-links { display: flex; gap: 0.8rem; }
+.project-link { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); padding: 0.4rem 0.9rem; border-radius: 4px; transition: var(--transition); cursor: none; }
+.project-link:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── 프로젝트 03, 04 카드 (1:1 비율 맞춤) ── */
+.project-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+
+  .project-card {
+    display: flex;
+    flex-direction: column; /* 카드를 세로 방향 플렉스로 변경 */
+
+    .project-visual,
+    .project-body {
+      flex: 1; /* ★ 핵심: 상/하단 높이를 동일하게 분배 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* 내부 콘텐츠 수직 중앙 정렬 */
+    }
+
+    .project-visual {
+      min-height: auto; /* 고정 높이 해제 */
+    }
+  }
+}
+
+/* ── 백세주 목업 비주얼 전용 ── */
+.tocobo-visual {
+  background: linear-gradient(135deg, #0d0d1a 0%, #0f0e1c 100%);
+  display: flex; align-items: center; justify-content: center; padding: 2.5rem 2rem;
+
+  .tocobo-mockup { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
+
+  .mock-desktop { background: #1a1a2a; border: 1px solid rgba(240, 192, 64, 0.3); border-radius: 8px; width: 100%; max-width: 270px; overflow: hidden; }
+  .mock-bar { height: 10px; background: #0e0e18; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 7px; gap: 4px; }
+  .mock-bar::before { content:''; width:4px; height:4px; border-radius:50%; background:#ff5f57; }
+  .mock-bar::after { content:''; width:4px; height:4px; border-radius:50%; background:#febc2e; }
+  
+  .mock-screen { padding: 0; background-size: cover; background-position: top center; background-repeat: no-repeat; overflow: hidden; transition: background-position 2s ease-in-out; }
+  .screen-desktop { min-height: 150px; background-image: url('/bekseju_desktop.png'); }
+  .screen-tablet { background-image: url('/bekseju_tablet.png'); }
+  .screen-mobile { background-image: url('/bekseju_mobile.png'); }
+
+  .mock-devices { display: flex; gap: 0.8rem; align-items: flex-end; }
+  .mock-tablet { background: #1a1a2a; border: 1px solid rgba(75, 110, 245, 0.35); border-radius: 6px; width: 88px; overflow: hidden; padding-bottom: 4px; }
+  .mock-tablet .mock-bar { height: 7px; }
+  .mock-mobile { background: #1a1a2a; border: 1px solid rgba(240, 192, 64, 0.35); border-radius: 9px; width: 50px; overflow: hidden; padding-bottom: 5px; }
+  
+  .mock-notch { width: 16px; height: 4px; background: #08080e; border-radius: 0 0 4px 4px; margin: 0 auto 3px; }
+  .mock-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #44445a; letter-spacing: 0.08em; }
+}
+.project-card:hover .mock-screen { background-position: bottom center; } /* 호버 시 스크롤 애니메이션 */
+[data-theme="light"] .mock-desktop, [data-theme="light"] .mock-tablet, [data-theme="light"] .mock-mobile { border-color: var(--border); }
+
+/* ─── 5. INFRA ──────────────────────────────────────────────── */
+#infra { background: var(--infra-bg); }
+.infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.infra-card { 
+  background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.8rem; transition: border-color var(--transition), transform var(--transition), background var(--transition); 
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); }
+  &.wide { grid-column: span 2; }
+}
+
+.infra-icon { width: 48px; height: 48px; background: var(--gold-dim); border: 1px solid rgba(240, 192, 64, 0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.2rem; color: var(--gold); transition: background var(--transition); }
+.infra-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+.infra-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+
+.infra-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.infra-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; padding: 0.2rem 0.55rem; background: var(--gold-dim); border: 1px solid rgba(240, 192, 64, 0.25); border-radius: 3px; color: var(--gold); transition: background var(--transition); }
+
+.arch-diagram { background: #08080e; border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #8888a8; overflow-x: auto; margin-top: 1.2rem; }
+.arch-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; }
+.arch-box { background: #1a1a2a; border: 1px solid rgba(255,255,255,0.07); padding: 0.35rem 0.75rem; border-radius: 5px; white-space: nowrap; color: #8888a8; }
+.arch-box.gold { border-color: rgba(240, 192, 64, 0.5); color: #f0c040; background: rgba(240, 192, 64, 0.12); }
+.arch-arrow { color: #44445a; }
+
+/* ─── 6. MINI PROJECTS ──────────────────────────────────────── */
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.mini-card {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; transition: border-color var(--transition), transform var(--transition), background var(--transition); cursor: none;
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); background: var(--surface); }
+  
+  .mini-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+  .mini-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; color: var(--text); }
+  .mini-stack { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--gold); }
+}
+
+/* ─── 7. ABOUT / CONTACT ────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.about-text p { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 1rem; line-height: 1.8; }
+.about-text p strong { color: var(--text); font-weight: 600; }
+.about-text p em { color: var(--gold); font-style: normal; }
+
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+.contact-list a { 
+  display: flex; align-items: center; gap: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text-dim); text-decoration: none; padding: 0.85rem 1.1rem; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); transition: var(--transition); cursor: none; 
+  &:hover { border-color: var(--gold); color: var(--gold); transform: translateX(4px); }
+  i { width: 18px; color: var(--gold); }
+}
+
+/* ─── 8. FOOTER ─────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+.footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-faint); em { color: var(--gold); font-style: normal; } }
+.footer-back { 
+  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-dim); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition); cursor: none; 
+  &:hover { color: var(--gold); }
+}
+
+/* ─── 9. SCROLL REVEAL UTILS ────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── 10. RESPONSIVE (MEDIA QUERIES) ────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-float { position: static; transform: none; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin-top: 2.5rem; opacity: 1; gap: 0.75rem; }
+  .float-card { min-width: 0; flex: 1 1 140px; }
+}
+
+@media (max-width: 900px) {
+  #hero { padding: 7rem 0 3rem; align-items: flex-start; }
+  .tech-groups { grid-template-columns: repeat(2, 1fr); }
+  .project-card.featured, .project-card.featured-flip { grid-template-columns: 1fr; }
+  .project-card.featured-flip .project-body { order: 2; }
+  .project-card.featured-flip .project-visual { order: 1; min-height: 220px; }
+  .project-row { grid-template-columns: 1fr; } /* 모바일에서 03, 04 세로로 스택 */
+  .infra-grid { grid-template-columns: 1fr 1fr; }
+  .infra-card.wide { grid-column: span 2; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { padding: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  #cursor, #cursor-ring { display: none; }
+  .btn, .contact-list a, .project-link, .footer-back { cursor: pointer; }
+  #hero { padding: 6rem 0 2.5rem; min-height: auto; }
+  .hero-name { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  .hero-cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .btn { width: 100%; justify-content: center; }
+  .hero-float, .hero-scroll { display: none; }
+  .tech-groups { grid-template-columns: 1fr; gap: 1rem; }
+  .infra-grid { grid-template-columns: 1fr; }
+  .infra-card.wide { grid-column: span 1; }
+  footer { flex-direction: column; text-align: center; padding: 1.5rem 1rem; }
+}

@@ -1,0 +1,160 @@
+@import 'variables';
+@import 'theme';
+
+/* ─── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none; // Custom Cursor 사용
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ─── NOISE OVERLAY ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: var(--noise-opacity);
+  transition: opacity 0.4s;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ─── LAYOUT & UTILS ────────────────────────────────────────── */
+.container {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section { 
+  position: relative; 
+  z-index: 1; 
+}
+
+.section-wrap { padding: 7rem 0; }
+.section-wrap + .section-wrap { border-top: 1px solid var(--border); }
+
+.sec-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sec-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  
+  em {
+    font-style: normal;
+    color: var(--gold);
+  }
+}
+
+.sec-note {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  max-width: 340px;
+  text-align: right;
+}
+
+/* ─── BUTTONS ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--transition);
+  cursor: none;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 700;
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--gold-glow);
+  }
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+}
+
+/* ─── SCROLL REVEAL (JS 연동) ───────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible      { opacity: 1; transform: translateY(0); }
+.reveal-delay-1      { transition-delay: 0.1s; }
+.reveal-delay-2      { transition-delay: 0.2s; }
+.reveal-delay-3      { transition-delay: 0.3s; }
+.reveal-delay-4      { transition-delay: 0.4s; }
+
+/* ─── MOBILE MEDIA QUERIES BASE ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.5rem; }
+}
+@media (max-width: 900px) {
+  .section-wrap { padding: 5rem 0; }
+  .sec-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 2.5rem; }
+  .sec-note { text-align: left; max-width: 100%; }
+}
+@media (max-width: 640px) {
+  body { cursor: auto; }
+  .container { padding: 0 1rem; }
+  .section-wrap { padding: 3.5rem 0; }
+  .sec-header   { margin-bottom: 1.8rem; }
+  .sec-note     { display: none; }
+  .sec-title    { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+}
+
+@media (min-width: 641px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+@import 'sections';
