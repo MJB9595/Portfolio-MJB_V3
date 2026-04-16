@@ -1,18 +1,12 @@
-# 👨‍💻 김재아(Kim Jae-ah) - Developer Portfolio
+# 김재아(Kim Jae-ah) - Developer Portfolio
 
 > **"코드 너머의 운영 경험까지. builds things that last."** <br/>
 > 인프라부터 프론트엔드까지 — 데이터 파이프라인을 직접 설계하고, Docker로 서버를 구축하며, React로 사용자 경험을 완성하는 풀스택 개발자의 포트폴리오 웹사이트입니다.
 
-🔗 **[포트폴리오 웹사이트 보러가기](https://당신의포트폴리오주소.com)**
-
 <br/>
 
-## 📌 Preview
-![Portfolio Preview](<포트폴리오 스크린샷 이미지 링크를 여기에 넣어주세요>)
 
-<br/>
-
-## ✨ Key Features
+## Key Features
 - **다크/라이트 테마 (Context API)**: 사용자의 시스템 설정 또는 토글 버튼을 통해 부드럽게 전환되는 테마 환경 구현
 - **Custom Cursor & Interactive UI**: 마우스 움직임을 부드럽게 추적하는 커스텀 커서 및 호버 애니메이션 적용 (`requestAnimationFrame` 활용)
 - **Scroll Reveal Animation**: `IntersectionObserver`를 활용하여 스크롤 시 컨텐츠가 자연스럽게 나타나는 동적 효과 구현
@@ -42,7 +36,7 @@
 
 <br/>
 
-## 🚀 Featured Projects
+## Featured Projects
 
 | 프로젝트명 | 핵심 기술 | 요약 | 링크 |
 | --- | --- | --- | --- |
@@ -54,24 +48,7 @@
 
 <br/>
 
-## 🖥 Infrastructure 운영 경험
+## Infrastructure 운영 경험
 단순히 코드를 작성하는 것을 넘어, 서비스를 직접 배포하고 유지하는 **인프라 환경(Self-Hosting)**을 운영합니다.
 - **NAS 홈 서버 구축**: Synology 및 UGREEN NAS 동시 운영, SMB 멀티채널 및 포트 포워딩을 통한 안정적인 접속 환경 구성
 - **Docker 기반 컨테이너 관리**: Immich(개인 사진 클라우드), Minecraft 서버 등 다양한 서비스를 컨테이너 기반으로 24시간 무중단 운영 중
-
-<br/>
-
-## ⚙️ Installation & Run
-
-```bash
-# 1. 저장소 클론
-$ git clone [https://github.com/MJB9595/본인레포이름.git](https://github.com/MJB9595/본인레포이름.git)
-
-# 2. 프로젝트 디렉토리 이동
-$ cd 본인레포이름
-
-# 3. 의존성 패키지 설치
-$ npm install
-
-# 4. 로컬 서버 실행
-$ npm run dev
