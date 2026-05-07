@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectDetailModal from "./ProjectDetailModal";
 
-// 4개 프로젝트 상세 데이터
+// 5개 프로젝트 상세 데이터
 const PROJECT_DETAILS = {
   1: {
     id: 1,
@@ -195,6 +195,182 @@ const ProductCard = ({ name, volume, alcohol, image, description }) => {
   },
   3: {
     id: 3,
+    title: "UniTrade — 중고 도서 거래 플랫폼",
+    subtitle: "JSP · Docker · MariaDB 풀스택 프로젝트",
+    period: "2024",
+    type: "Fullstack · Infra",
+    github: "https://github.com/MJB9595/JSP_BookTrade",
+    demo: "https://book.mjb.diskstation.me",
+    stack: [
+      "JSP", "Java Servlet", "JDBC",
+      "MariaDB", "Docker", "Docker Compose",
+      "Apache Tomcat 9", "phpMyAdmin", "CSS",
+    ],
+    overview:
+      "중고 책 거래를 목적으로 설계한 풀스택 웹 플랫폼. 회원가입·로그인, 상품 등록·삭제, 찜 기능, 마이페이지, 1:1 채팅, 상품 페이지 댓글·대댓글까지 실제 서비스 수준의 기능을 JSP + Java Servlet으로 구현했습니다. MariaDB · Tomcat · phpMyAdmin을 Docker Compose로 오케스트레이션하고 NAS에 셀프 호스팅으로 배포·운영 중입니다.",
+    problem:
+      "단순 CRUD를 넘어 실사용 가능한 거래 플랫폼 구현이 목표였으나, JSP 환경에서 1:1 채팅·댓글 계층 구조·파일 업로드 등 복잡한 기능을 동시에 소화하면서 DB 스키마 설계와 세션 관리까지 일관성 있게 유지해야 하는 도전.",
+    solution:
+      "기능별 Servlet을 역할에 따라 분리(Auth / Product / Chat / Comment)하여 관심사를 명확히 구분. 댓글·대댓글은 parent_id 자기 참조 재귀 구조 테이블로 설계. Docker Compose로 DB · WAS · phpMyAdmin을 단일 브릿지 네트워크로 묶고, 볼륨 마운트(`./db_data`)로 데이터 영속성을 보장.",
+    result:
+      "회원·상품·찜·1:1 채팅·댓글/대댓글 전 기능 동작 완성. `docker compose up` 한 줄로 어느 환경에서도 즉시 재현 가능. Synology NAS Docker 컨테이너 24시간 무중단 운영 중.",
+    codeHighlights: [
+      {
+        label: "Docker Compose — 3컨테이너 오케스트레이션",
+        lang: "yaml",
+        code: `# compose.yaml
+version: '3.8'
+services:
+  # 1. 데이터베이스 (MariaDB 10.11)
+  db:
+    image: mariadb:10.11
+    container_name: uni_db
+    environment:
+      - MYSQL_DATABASE=ubt_library
+      - MYSQL_USER=ubt_user
+      - TZ=Asia/Seoul
+    volumes:
+      - ./db_data:/var/lib/mysql  # 볼륨으로 데이터 영속성 확보
+    networks: [uni_net]
+    restart: always
+
+  # 2. WAS (Tomcat 9 + JDK 21)
+  web:
+    image: tomcat:9.0-jdk21
+    container_name: uni_web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+    depends_on: [db]
+    networks: [uni_net]
+    restart: always
+
+  # 3. DB 관리 도구 (phpMyAdmin)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports: ["8081:80"]
+    environment:
+      - PMA_HOST=db
+    depends_on: [db]
+    networks: [uni_net]
+
+networks:
+  uni_net:
+    driver: bridge  # 3컨테이너 단일 격리 네트워크`,
+      },
+      {
+        label: "댓글 · 대댓글 재귀 구조 (Java Servlet)",
+        lang: "java",
+        code: `// CommentServlet.java — parent_id 자기 참조 트리 구조
+@WebServlet("/comment")
+public class CommentServlet extends HttpServlet {
+
+    // 댓글 등록 (parent_id=null: 댓글 / parent_id=N: 대댓글)
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse res) throws ... {
+        int productId  = Integer.parseInt(req.getParameter("product_id"));
+        String content = req.getParameter("content");
+        String parentIdStr = req.getParameter("parent_id");
+
+        Integer parentId = (parentIdStr != null && !parentIdStr.isEmpty())
+            ? Integer.parseInt(parentIdStr)
+            : null;   // null → 최상위 댓글
+
+        try (Connection conn = DBUtil.getConnection()) {
+            String sql = "INSERT INTO comment " +
+                "(product_id, user_id, content, parent_id, created_at) " +
+                "VALUES (?, ?, ?, ?, NOW())";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, productId);
+            ps.setInt(2, getSessionUserId(req));
+            ps.setString(3, content);
+            if (parentId != null) ps.setInt(4, parentId);
+            else                  ps.setNull(4, Types.INTEGER);
+            ps.executeUpdate();
+        }
+        res.sendRedirect("/product?id=" + productId);
+    }
+
+    // 댓글 목록: COALESCE 정렬로 부모 아래 대댓글 배치
+    public List<Comment> getCommentTree(int productId, Connection conn) {
+        String sql = "SELECT c.*, u.nickname FROM comment c " +
+                     "JOIN users u ON c.user_id = u.id " +
+                     "WHERE c.product_id = ? " +
+                     "ORDER BY COALESCE(c.parent_id, c.id), c.id";
+        ...
+    }
+}`,
+      },
+      {
+        label: "찜(Wishlist) 토글 — JSON 응답 Servlet",
+        lang: "java",
+        code: `// WishServlet.java — 찜 추가 / 제거 토글
+@WebServlet("/wish")
+public class WishServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse res) throws ... {
+        int productId = Integer.parseInt(req.getParameter("product_id"));
+        int userId    = getSessionUserId(req);
+        res.setContentType("application/json;charset=UTF-8");
+
+        try (Connection conn = DBUtil.getConnection()) {
+            String check = "SELECT id FROM wishlist " +
+                           "WHERE user_id=? AND product_id=?";
+            PreparedStatement ps = conn.prepareStatement(check);
+            ps.setInt(1, userId); ps.setInt(2, productId);
+            ResultSet rs = ps.executeQuery();
+
+            String action;
+            if (rs.next()) {
+                // 이미 찜 → 제거
+                PreparedStatement del = conn.prepareStatement(
+                    "DELETE FROM wishlist WHERE user_id=? AND product_id=?");
+                del.setInt(1, userId); del.setInt(2, productId);
+                del.executeUpdate();
+                action = "removed";
+            } else {
+                // 미찜 → 추가
+                PreparedStatement ins = conn.prepareStatement(
+                    "INSERT INTO wishlist (user_id, product_id) VALUES (?,?)");
+                ins.setInt(1, userId); ins.setInt(2, productId);
+                ins.executeUpdate();
+                action = "added";
+            }
+            // JSON 응답으로 프론트 버튼 상태 동적 업데이트
+            res.getWriter().write("{\"action\":\"" + action + "\"}");
+        }
+    }
+}`,
+      },
+    ],
+    architecture: [
+      { label: "Browser (JSP)", type: "gold" },
+      { label: "→", type: "arrow" },
+      { label: "Tomcat 9 · JDK 21", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "MariaDB", type: "blue" },
+      { label: "↑ Docker Compose", type: "arrow" },
+      { label: "NAS Self-Host", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "찜·채팅·댓글/대댓글 등 실거래 플랫폼 수준의 다양한 기능을 JSP 단일 스택으로 완성",
+        "Docker Compose 3컨테이너 오케스트레이션으로 환경 재현성과 데이터 영속성 동시 확보",
+        "parent_id 재귀 테이블 설계로 댓글 계층 구조를 DB 레벨에서 명확하게 처리",
+        "NAS Docker 배포로 인프라 전 과정을 단독 설계·운영하는 역량 입증",
+      ],
+      improvements: [
+        "HTTP Polling 방식 채팅을 WebSocket(STOMP)으로 교체 시 실시간성 대폭 향상 가능",
+        "Session 인증을 JWT + Refresh Token으로 전환하면 Stateless 확장성 확보",
+        "이미지 저장을 Object Storage(S3 호환)로 이전 시 서버 부하 분산 가능",
+        "Flyway·Liquibase 도입으로 DB 스키마 버전 관리 체계화 가능",
+      ],
+    },
+  },
+  4: {
+    id: 4,
     title: "VAIONITY — Spring & React 풀스택",
     subtitle: "완전 분리 아키텍처 RESTful 관리 시스템",
     period: "2024",
@@ -311,8 +487,8 @@ export const useAuth = () => useContext(AuthContext);`,
       ],
     },
   },
-  4: {
-    id: 4,
+  5: {
+    id: 5,
     title: "LocaPick — 위치기반 장소 추천 알고리즘",
     subtitle: "3개 지도 API 하이브리드 아키텍처",
     period: "2024",
@@ -737,6 +913,14 @@ const ProjectsPage = () => {
                   </p>
                   <div className="project-links">
                     <a
+                      href="https://github.com/MJB9595/JSP_BookTrade"
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a
                       href="https://book.mjb.diskstation.me"
                       className="project-link"
                       target="_blank"
@@ -745,6 +929,13 @@ const ProjectsPage = () => {
                       <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
                       Live Demo
                     </a>
+                    <button
+                      className="project-link project-detail-btn"
+                      onClick={() => openModal(3)}
+                    >
+                      <i className="fa-solid fa-magnifying-glass-chart"></i>{" "}
+                      상세 보기
+                    </button>
                   </div>
                 </div>
               </div>
@@ -824,7 +1015,7 @@ const ProjectsPage = () => {
                     </a>
                     <button
                       className="project-link project-detail-btn"
-                      onClick={() => openModal(3)}
+                      onClick={() => openModal(4)}
                     >
                       <i className="fa-solid fa-magnifying-glass-chart"></i>{" "}
                       상세 보기
@@ -972,7 +1163,7 @@ const ProjectsPage = () => {
                   </a>
                   <button
                     className="project-link project-detail-btn"
-                    onClick={() => openModal(4)}
+                    onClick={() => openModal(5)}
                   >
                     <i className="fa-solid fa-magnifying-glass-chart"></i> 상세
                     보기
