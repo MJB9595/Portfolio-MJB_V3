@@ -1,0 +1,604 @@
+/* ================================================================
+   ProjectDetailModal.scss
+   포트폴리오 기존 디자인 시스템(CSS variables, 폰트, 색상) 완전 호환
+   ================================================================ */
+
+/* ── 오버레이 ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(8, 8, 14, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: overlayIn 0.25s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 패널 ── */
+.modal-panel {
+  background: var(--bg-2);
+  border: 1px solid rgba(240, 192, 64, 0.2);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(240, 192, 64, 0.08);
+  animation: panelIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── 헤더 ── */
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.8rem 2rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.modal-type-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #08080e;
+  background: var(--gold);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+.modal-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+
+.modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.modal-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modal-link-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: none;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+}
+
+.modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: none;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: rgba(255, 80, 80, 0.4);
+    color: #ff5f57;
+    background: rgba(255, 80, 80, 0.08);
+  }
+}
+
+/* ── 스택 태그 ── */
+.modal-stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modal-stack-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-tag);
+  border-radius: 3px;
+  color: var(--blue);
+}
+
+/* ── 탭 ── */
+.modal-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+
+.modal-tab {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  padding: 0.85rem 1.2rem;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  cursor: none;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    color: var(--text-dim);
+  }
+
+  &.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+}
+
+/* ── 본문 (스크롤 가능) ── */
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 1.8rem 2rem;
+
+  /* 스크롤바 */
+  &::-webkit-scrollbar { width: 3px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: tabIn 0.22s ease;
+}
+
+@keyframes tabIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 개요 탭 ── */
+.overview-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.overview-text {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.overview-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+/* PSR 상세 카드 */
+.psr-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.psr-detail-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: var(--transition);
+
+  &.problem { border-top: 2px solid rgba(255, 95, 87, 0.5); }
+  &.solution { border-top: 2px solid rgba(75, 110, 245, 0.5); }
+  &.result   { border-top: 2px solid rgba(50, 215, 100, 0.5); }
+}
+
+.psr-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.psr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &.red   { background: #ff5f57; }
+  &.blue  { background: #4b6ef5; }
+  &.green { background: #32d764; }
+}
+
+.psr-detail-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.psr-detail-text {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* 아키텍처 다이어그램 */
+.arch-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+.modal-arch-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+}
+
+.modal-arch-node {
+  padding: 0.35rem 0.75rem;
+  border-radius: 5px;
+  white-space: nowrap;
+
+  &.gold {
+    background: rgba(240, 192, 64, 0.12);
+    border: 1px solid rgba(240, 192, 64, 0.4);
+    color: var(--gold);
+  }
+  &.blue {
+    background: var(--blue-dim);
+    border: 1px solid var(--blue-tag);
+    color: var(--blue);
+  }
+  &.normal {
+    background: #1a1a2a;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #8888a8;
+  }
+  &.arrow {
+    color: var(--text-faint);
+    background: none;
+    border: none;
+    padding: 0 0.2rem;
+  }
+}
+
+/* ── 코드 탭 ── */
+.code-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.code-sel-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-3);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: none;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--gold-glow);
+    color: var(--text);
+  }
+
+  &.active {
+    border-color: var(--gold-glow);
+    background: var(--gold-dim);
+    color: var(--gold);
+  }
+}
+
+/* 코드 블록 */
+.code-block-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.code-block-header {
+  background: #0d0d1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.code-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &.red    { background: #ff5f57; }
+    &.yellow { background: #febc2e; }
+    &.green  { background: #28c840; }
+  }
+}
+
+.code-block-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.code-block {
+  background: #0a0a14;
+  margin: 0;
+  padding: 1.2rem 0;
+  overflow-x: auto;
+  max-height: 380px;
+  font-size: 0;
+
+  &::-webkit-scrollbar { height: 3px; }
+  &::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+}
+
+.code-row {
+  display: flex;
+  align-items: baseline;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  padding: 0 1rem;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(255,255,255,0.03);
+  }
+}
+
+.line-num {
+  color: #44445a;
+  min-width: 2.2rem;
+  user-select: none;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+.line-text {
+  color: #c8c8e8;
+  white-space: pre;
+}
+
+/* 신택스 하이라이터 */
+.sh-kw     { color: #a78bfa; }
+.sh-fn     { color: #60a5fa; }
+.sh-type   { color: #34d399; }
+.sh-string { color: #fcd34d; }
+.sh-comment{ color: #44445a; font-style: italic; }
+
+/* ── 분석 탭 ── */
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.review-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+
+  &.strengths   { border-top: 2px solid rgba(50, 215, 100, 0.5); }
+  &.improvements{ border-top: 2px solid rgba(240, 192, 64, 0.5); }
+}
+
+.review-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.review-item {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  align-items: flex-start;
+}
+
+.review-bullet {
+  flex-shrink: 0;
+  font-size: 0.6rem;
+  margin-top: 0.35rem;
+
+  &.good    { color: #32d764; }
+  &.improve { color: var(--gold); }
+}
+
+/* 기술 스택 상세 */
+.stack-detail-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+.stack-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.stack-detail-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  i {
+    color: var(--gold);
+    font-size: 0.65rem;
+  }
+}
+
+/* ── "상세 보기" 버튼 스타일 ── */
+.project-detail-btn {
+  background: var(--gold-dim) !important;
+  border-color: var(--gold-glow) !important;
+  color: var(--gold) !important;
+  cursor: none;
+
+  &:hover {
+    background: rgba(240, 192, 64, 0.25) !important;
+    border-color: var(--gold) !important;
+  }
+}
+
+/* ── 라이트 테마 대응 ── */
+[data-theme="light"] {
+  .modal-overlay {
+    background: rgba(245, 244, 240, 0.88);
+  }
+  .modal-panel {
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(184, 120, 0, 0.12);
+  }
+  .code-block, .code-block-header {
+    background: #1a1a2a;
+  }
+  .modal-arch-diagram .normal {
+    background: #f0eeea;
+    border-color: rgba(0,0,0,0.1);
+    color: #52526e;
+  }
+}
+
+/* ── 반응형 ── */
+@media (max-width: 640px) {
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-panel   { max-height: 92vh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+
+  .modal-header  { padding: 1.4rem 1.2rem 1rem; flex-wrap: wrap; }
+  .modal-stack-row { padding: 0.8rem 1.2rem; }
+  .modal-tabs    { padding: 0 1.2rem; }
+  .modal-body    { padding: 1.4rem 1.2rem; }
+
+  .psr-detail-grid { grid-template-columns: 1fr; }
+  .review-grid     { grid-template-columns: 1fr; }
+
+  .modal-title { font-size: 1.05rem; }
+  .code-sel-btn { font-size: 0.64rem; }
+}
+
+@media (max-width: 480px) {
+  .modal-header-left { flex-direction: column; }
+  .modal-type-badge { align-self: flex-start; }
+}
