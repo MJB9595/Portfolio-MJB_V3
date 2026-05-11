@@ -4,6 +4,7 @@
 #cursor {
   position: fixed; top: 0; left: 0; z-index: 9999;
   pointer-events: none;
+  display: none;
 }
 
 #cursor-dot {
@@ -101,6 +102,23 @@ body.hovering #cursor-ring {
       &:nth-child(3) { animation-delay: 2.6s; }
 
       .float-card-label { color: var(--gold); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    }
+  }
+
+  /* ─── 3D Scene (Ramiel Cube) ───────────────────────────── */
+  .hero-scene {
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    width: 440px;
+    height: 440px;
+    z-index: 1;
+    pointer-events: none;
+
+    canvas {
+      background: transparent !important;
+      pointer-events: auto !important;
+      touch-action: none;
     }
   }
 }
@@ -305,19 +323,24 @@ footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; just
 
 /* ─── 10. RESPONSIVE (MEDIA QUERIES) ────────────────────────── */
 @media (max-width: 1024px) {
-  .hero-float { position: static; transform: none; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin-top: 2.5rem; opacity: 1; gap: 0.75rem; }
-  .float-card { min-width: 0; flex: 1 1 140px; }
+  #hero .hero-float { position: static; transform: none; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin-top: 2.5rem; opacity: 1; gap: 0.75rem; }
+  #hero .hero-float .float-card { min-width: 0; flex: 1 1 140px; }
+  .hero-scene { right: 4rem; width: 320px; height: 360px; }
 }
 
 @media (max-width: 900px) {
   #hero { padding: 7rem 0 3rem; align-items: flex-start; }
+  #hero .hero-float { display: none; }
+  .hero-scene { width: 240px; height: 260px; top: 5%; right: 0.5rem; }
   .tech-groups { grid-template-columns: repeat(2, 1fr); }
   .project-card.featured, .project-card.featured-flip { grid-template-columns: 1fr; }
   .project-card.featured-flip .project-body { order: 2; }
   .project-card.featured-flip .project-visual { order: 1; min-height: 220px; }
-  .project-row { grid-template-columns: 1fr; } /* 모바일에서 03, 04 세로로 스택 */
-  .infra-grid { grid-template-columns: 1fr 1fr; }
+  .project-row { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
   .infra-card.wide { grid-column: span 2; }
+  .infra-card { padding: 1.4rem; }
+  .arch-diagram { padding: 1rem; font-size: 0.65rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   footer { padding: 1.5rem; }
 }
@@ -325,13 +348,48 @@ footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; just
 @media (max-width: 640px) {
   #cursor, #cursor-ring { display: none; }
   .btn, .contact-list a, .project-link, .footer-back { cursor: pointer; }
-  #hero { padding: 6rem 0 2.5rem; min-height: auto; }
+  #hero { padding: 6rem 0 5rem; min-height: auto; }
   .hero-name { font-size: clamp(2.4rem, 10vw, 3.2rem); }
   .hero-cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .btn { width: 100%; justify-content: center; }
-  .hero-float, .hero-scroll { display: none; }
+  .hero-float, .hero-scene { display: none; }
+  #hero .hero-scroll {
+    display: flex;
+    bottom: 1rem;
+  }
   .tech-groups { grid-template-columns: 1fr; gap: 1rem; }
-  .infra-grid { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .infra-card { padding: 1.2rem; }
   .infra-card.wide { grid-column: span 1; }
+  .infra-title { font-size: 0.85rem; }
+  .infra-desc { font-size: 0.78rem; }
+  .infra-badge { font-size: 0.58rem; padding: 0.15rem 0.45rem; }
+  .arch-diagram { padding: 0.8rem; font-size: 0.58rem; overflow-x: auto; }
+  .arch-box { padding: 0.2rem 0.4rem; font-size: 0.55rem; }
+  .arch-row { flex-wrap: wrap; gap: 0.3rem; }
+  .project-body { padding: 1.2rem; }
+  .project-title { font-size: 1.1rem; }
+  .project-desc { font-size: 0.82rem; }
+  .project-links { flex-wrap: wrap; gap: 0.5rem; }
+  .project-link { font-size: 0.65rem; padding: 0.3rem 0.7rem; }
+  .psr-grid { grid-template-columns: 1fr; gap: 0.4rem; }
+  .tocobo-visual { padding: 1.5rem 1rem; }
+  .mini-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .mini-card { padding: 1rem; }
+  .mini-title { font-size: 0.8rem; }
+  .mini-stack { font-size: 0.55rem; }
+  .about-grid { gap: 1.5rem; }
+  .about-text p { font-size: 0.85rem; }
+  .contact-list a { font-size: 0.72rem; padding: 0.7rem 0.9rem; gap: 0.6rem; }
   footer { flex-direction: column; text-align: center; padding: 1.5rem 1rem; }
+  .footer-copy { font-size: 0.6rem; }
+  .section-wrap { padding: 3rem 0; }
+}
+
+@media (max-width: 400px) {
+  .hero-float, .hero-scroll, .hero-scene { display: none; }
+  .container { padding: 0 0.75rem; }
+  .section-wrap { padding: 2.5rem 0; }
+  .mini-grid { grid-template-columns: 1fr; }
+  .infra-icon { width: 36px; height: 36px; font-size: 1rem; }
 }

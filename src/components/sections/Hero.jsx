@@ -1,3 +1,5 @@
+import HeroScene from './HeroScene';
+
 const Hero = () => {
   return (
     <section id="hero">
@@ -27,6 +29,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <HeroScene />
 
       <div className="hero-float">
         <div className="float-card">

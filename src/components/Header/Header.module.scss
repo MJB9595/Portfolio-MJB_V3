@@ -121,3 +121,12 @@
   .navLinks { display: none; }
   .hamburger { display: flex; }
 }
+
+@media (max-width: 640px) {
+  .nav { padding: 0.8rem 1rem; }
+  .navLogo { font-size: 0.78rem; }
+  .themeToggle { width: 30px; height: 30px; font-size: 0.75rem; }
+  .hamburger { width: 30px; height: 30px; }
+  .mobileNav { padding: 5rem 1.5rem 1.5rem; width: min(280px, 85vw); }
+  .mobileNavLinks a { font-size: 0.82rem; padding: 0.85rem 1rem; }
+}
