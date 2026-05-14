@@ -1,0 +1,4312 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  bekseju_desktop.png
+  bekseju_mobile.png
+  bekseju_tablet.png
+  favicon.svg
+  Frame 8.png
+  icons.svg
+  locapickimg.png
+  simplemap.png
+src/
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    Footer/
+      Footer.jsx
+    Header/
+      Header.jsx
+      Header.module.scss
+    layout/
+      Cursor.jsx
+      Layout.jsx
+      Layout.module.scss
+    sections/
+      Hero.jsx
+      HeroScene.jsx
+      Infra.jsx
+  context/
+    themeContext.js
+    ThemeProvider.jsx
+    useTheme.js
+  pages/
+    About.jsx
+    Home.jsx
+    MiniProjects.jsx
+    Page.module.scss
+    ProjectDetailModal.jsx
+    ProjectDetailModal.scss
+    ProjectsPage.jsx
+    Skils.jsx
+  styles/
+    _sections.scss
+    _theme.scss
+    _variables.scss
+    global.scss
+  App.jsx
+  main.jsx
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/Footer/Footer.jsx">
+const Footer = () => {
+  return (
+    <footer>
+      <p className="footer-copy">© 2025 <em>김재아</em> — Built with React & SCSS & 🤍</p>
+      <a href="#hero" className="footer-back" onClick={(e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }}>
+        <i className="fa-solid fa-arrow-up"></i> Back to top
+      </a>
+    </footer>
+  );
+};
+
+export default Footer;
+</file>
+
+<file path="src/components/Header/Header.jsx">
+import { useState, useEffect } from 'react';
+import useTheme from '../../context/useTheme';
+import styles from './Header.module.scss';
+
+const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  // 스크롤 시 현재 섹션 활성화 표시 (Scroll Spy)
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      sections.forEach((sec) => {
+        if (window.scrollY >= sec.offsetTop - 200) {
+          current = sec.id;
+        }
+      });
+      setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = () => setIsMobileNavOpen(false);
+
+  return (
+    <>
+      <nav className={styles.nav}>
+        <div className={styles.navLogo}>JA.<span>DEV</span></div>
+        <ul className={styles.navLinks}>
+          <li><a href="#stack" className={activeSection === 'stack' ? styles.active : ''}>Stack</a></li>
+          <li><a href="#projects" className={activeSection === 'projects' ? styles.active : ''}>Projects</a></li>
+          <li><a href="#infra" className={activeSection === 'infra' ? styles.active : ''}>Infra</a></li>
+          <li><a href="#about" className={activeSection === 'about' ? styles.active : ''}>About</a></li>
+        </ul>
+        
+        <div className={styles.navActions}>
+          <button 
+            id="theme-toggle" 
+            className={styles.themeToggle} 
+            onClick={toggleTheme} 
+            aria-label="테마 변경"
+          >
+            <i className={theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'}></i>
+          </button>
+          
+          <button 
+            className={`${styles.hamburger} ${isMobileNavOpen ? styles.open : ''}`}
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            aria-expanded={isMobileNavOpen}
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+
+      {/* 모바일 네비게이션 드로워 */}
+      <div className={`${styles.mobileNav} ${isMobileNavOpen ? styles.open : ''}`}>
+        <ul className={styles.mobileNavLinks}>
+          <li><a href="#stack" onClick={handleNavClick}>Stack</a></li>
+          <li><a href="#projects" onClick={handleNavClick}>Projects</a></li>
+          <li><a href="#infra" onClick={handleNavClick}>Infra</a></li>
+          <li><a href="#about" onClick={handleNavClick}>About</a></li>
+        </ul>
+      </div>
+      <div 
+        className={`${styles.mobileOverlay} ${isMobileNavOpen ? styles.open : ''}`}
+        onClick={() => setIsMobileNavOpen(false)}
+      ></div>
+    </>
+  );
+};
+
+export default Header;
+</file>
+
+<file path="src/components/layout/Cursor.jsx">
+import { useEffect, useRef } from 'react';
+
+const Cursor = () => {
+  const dotRef = useRef(null);
+  const ringRef = useRef(null);
+  const requestRef = useRef();
+  const mousePos = useRef({ x: 0, y: 0 });
+  const ringPos = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const onMouseMove = (e) => {
+      mousePos.current = { x: e.clientX, y: e.clientY };
+      if (dotRef.current) {
+        dotRef.current.style.left = `${e.clientX}px`;
+        dotRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+
+    const animateRing = () => {
+      ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.14;
+      ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.14;
+
+      if (ringRef.current) {
+        ringRef.current.style.left = `${ringPos.current.x}px`;
+        ringRef.current.style.top = `${ringPos.current.y}px`;
+      }
+      requestRef.current = requestAnimationFrame(animateRing);
+    };
+
+    // 💡 이벤트 위임(Event Delegation) 방식 적용
+    // DOM이 React에 의해 재렌더링 되더라도 호버 효과가 끊어지지 않습니다.
+    const handleMouseOver = (e) => {
+      // 마우스가 올라간 요소나 그 부모 중에 아래 태그/클래스가 있는지 확인
+      if (e.target.closest('a, button, .mini-card, .project-card, .tech-group, .themeToggle')) {
+        document.body.classList.add('hovering');
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target.closest('a, button, .mini-card, .project-card, .tech-group, .themeToggle')) {
+        document.body.classList.remove('hovering');
+      }
+    };
+
+    // window와 document 최상단에 이벤트를 걸어 하위 요소의 변화를 모두 감지
+    window.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+    
+    requestRef.current = requestAnimationFrame(animateRing);
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
+
+  return (
+    <>
+      <div id="cursor">
+        <div id="cursor-dot" ref={dotRef}></div>
+      </div>
+      <div id="cursor-ring" ref={ringRef}></div>
+    </>
+  );
+};
+
+export default Cursor;
+</file>
+
+<file path="src/components/layout/Layout.jsx">
+import { Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Cursor from './Cursor';
+import styles from './Layout.module.scss';
+
+const Layout = () => {
+  useEffect(() => {
+    // IntersectionObserver를 이용한 스크롤 애니메이션 구현
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => obs.observe(el));
+    
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div className={styles.wrapper}>
+      <Cursor />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
+</file>
+
+<file path="src/components/layout/Layout.module.scss">
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+</file>
+
+<file path="src/components/sections/HeroScene.jsx">
+import { useRef, useMemo, useState, useEffect } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Float, OrbitControls } from '@react-three/drei';
+import * as THREE from 'three';
+import useTheme from '../../context/useTheme';
+
+/* ─── Palette ─────────────────────────────────────────────── */
+function getPalette(isDark) {
+  return isDark
+    ? {
+        primary: '#baff44', emissive: '#1144aa', emissiveIntensity: 0.8,
+        wireframe: '#88bbff', light1: '#4488ff', light2: '#88bbff', ambientIntensity: 0.5,
+      }
+    : {
+        primary: '#3d7cc9', emissive: '#4a6fb5', emissiveIntensity: 0.6,
+        wireframe: '#6b8fd0', light1: '#5c8fe2', light2: '#7ea1e8', ambientIntensity: 0.9,
+      };
+}
+
+const lerp = (a, b, t) => a + (b - a) * t;
+
+/* ══════════════════════════════════════════════════════════
+   Organic Ramiel - 캔버스 이탈 방지
+   ══════════════════════════════════════════════════════════ */
+function UndulatingRamiel({ palette, isTransformed }) {
+  const groupRef = useRef(null);
+  const meshRef = useRef(null);
+  const wireRef = useRef(null);
+  const ampRef = useRef(0.02);
+
+  const { basePositions, geometry } = useMemo(() => {
+    // 캔버스 여백 확보를 위해 기본 크기 1.3
+    const geo = new THREE.OctahedronGeometry(1.3, 12);
+    const pos = geo.attributes.position.clone();
+    geo.computeVertexNormals();
+    return { basePositions: pos, geometry: geo };
+  }, []);
+
+  useFrame((state, delta) => {
+    const t = state.clock.elapsedTime;
+    
+    // 폭주 시 파동 진폭
+    const targetAmp = isTransformed ? 0.25 : 0.03;
+    ampRef.current = lerp(ampRef.current, targetAmp, delta * 2.0);
+    const currentAmp = ampRef.current;
+    
+    const speed = isTransformed ? 2.5 : 1.0;
+    const timeVar = t * speed;
+
+    const positions = geometry.attributes.position.array;
+    const bases = basePositions.array;
+
+    for (let i = 0; i < positions.length; i += 3) {
+      const bx = bases[i];
+      const by = bases[i+1];
+      const bz = bases[i+2];
+
+      const length = Math.sqrt(bx*bx + by*by + bz*bz) || 1;
+      const nx = bx / length;
+      const ny = by / length;
+      const nz = bz / length;
+
+      const noise = 
+        Math.sin(bx * 3.0 + timeVar * 1.2) + 
+        Math.cos(by * 3.0 + timeVar * 0.8) + 
+        Math.sin(bz * 3.0 + timeVar * 1.5);
+        
+      const intensity = noise * currentAmp;
+
+      positions[i]     = bx + nx * intensity;
+      positions[i+1]   = by + ny * intensity;
+      positions[i+2]   = bz + nz * intensity;
+    }
+    
+    geometry.attributes.position.needsUpdate = true;
+    geometry.computeVertexNormals();
+
+    const rotSpeed = isTransformed ? 0.8 : 0.2;
+    if (meshRef.current) {
+      meshRef.current.rotation.y += delta * rotSpeed;
+      meshRef.current.rotation.z += delta * (rotSpeed * 0.5);
+    }
+    if (wireRef.current) {
+      wireRef.current.rotation.copy(meshRef.current.rotation);
+    }
+
+    // 그룹 팽창 스케일 조절 (최대 0.9배)
+    if (groupRef.current) {
+      const targetScale = isTransformed ? 0.9 : 1.0;
+      groupRef.current.scale.setScalar(lerp(groupRef.current.scale.x, targetScale, delta * 3.0));
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      <mesh ref={meshRef} geometry={geometry}>
+        <meshPhysicalMaterial
+          color={palette.primary}
+          emissive={palette.emissive}
+          emissiveIntensity={isTransformed ? 1.5 : palette.emissiveIntensity}
+          roughness={0.15}
+          metalness={0.8}
+          clearcoat={1.0}
+          clearcoatRoughness={0.1}
+          transparent
+          opacity={0.65} 
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+      
+      <mesh ref={wireRef} geometry={geometry} scale={1.01}>
+        <meshBasicMaterial 
+          color={palette.wireframe} 
+          wireframe 
+          transparent 
+          opacity={isTransformed ? 0.4 : 0.15} 
+        />
+      </mesh>
+    </group>
+  );
+}
+
+/* ─── HeroScene ───────────────────────────────────────────── */
+const HeroScene = () => {
+  const { theme } = useTheme();
+  const palette = getPalette(theme === 'dark');
+  const [isTransformed, setIsTransformed] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  // 화면 폭이 1400px 이하일 때 렌더링 중단
+  useEffect(() => {
+    const handleResize = () => {
+      setIsVisible(window.innerWidth > 1400);
+    };
+
+    handleResize(); // 마운트 시 최초 확인
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // 1400px 이하라면 빈 값(null)을 반환하여 리소스를 완전히 해제
+  if (!isVisible) return null;
+
+  return (
+    <div className="hero-scene">
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        gl={{ alpha: true, antialias: true }}
+        dpr={[1, 1.5]}
+        onDoubleClick={() => setIsTransformed((v) => !v)}
+      >
+        <OrbitControls
+          enableZoom={false} 
+          enablePan={false} 
+          rotateSpeed={0.8}
+          minPolarAngle={Math.PI / 4} 
+          maxPolarAngle={Math.PI * 0.75}
+        />
+        <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
+          <ambientLight intensity={palette.ambientIntensity} />
+          <pointLight position={[5, 5, 5]} intensity={1.2} color={palette.light1} />
+          <pointLight position={[-3, -2, 4]} intensity={0.6} color={palette.light2} />
+          
+          <group onClick={(e) => e.stopPropagation()}>
+            <UndulatingRamiel 
+              palette={palette} 
+              isTransformed={isTransformed} 
+            />
+          </group>
+        </Float>
+      </Canvas>
+    </div>
+  );
+};
+
+export default HeroScene;
+</file>
+
+<file path="src/components/sections/Infra.jsx">
+const Infra = () => {
+  return (
+    <section id="infra" className="section-wrap">
+      <div className="container">
+        <div className="sec-header reveal">
+          <div>
+            <p className="sec-label">04 — Infrastructure</p>
+            <h2 className="sec-title">코드 너머의<br /><em>운영 경험</em></h2>
+          </div>
+          <p className="sec-note">서비스를 배포하고 유지하는<br />인프라 레이어까지 직접 다룹니다.</p>
+        </div>
+
+        <div className="infra-grid">
+          <div className="infra-card reveal reveal-delay-1">
+            <div className="infra-icon"><i className="fa-solid fa-hard-drive"></i></div>
+            <h3 className="infra-title">NAS 홈 서버 운영</h3>
+            <p className="infra-desc">Synology와 UGREEN NAS 2대를 동시 운영. SMB 멀티채널 설정과 포트 포워딩으로 안정적인 외부 접속 환경을 직접 구축했습니다.</p>
+            <div className="infra-badges">
+              <span className="infra-badge">Synology</span>
+              <span className="infra-badge">UGREEN</span>
+              <span className="infra-badge">SMB 멀티채널</span>
+              <span className="infra-badge">포트 포워딩</span>
+              <span className="infra-badge">보안 관리</span>
+            </div>
+          </div>
+          <div className="infra-card reveal reveal-delay-2">
+            <div className="infra-icon"><i className="fa-brands fa-docker"></i></div>
+            <h3 className="infra-title">Docker Self-Hosting</h3>
+            <p className="infra-desc">Immich(개인 사진 클라우드)를 Docker로 직접 구축해 운영 중. 24시간 게임 서버(Minecraft, SCP)도 컨테이너로 관리합니다.</p>
+            <div className="infra-badges">
+              <span className="infra-badge">Immich</span>
+              <span className="infra-badge">Minecraft</span>
+              <span className="infra-badge">SCP Server</span>
+              <span className="infra-badge">24h 운영</span>
+            </div>
+          </div>
+          <div className="infra-card wide reveal">
+            <div className="infra-icon"><i className="fa-solid fa-diagram-project"></i></div>
+            <h3 className="infra-title" style={{marginBottom: '1.2rem'}}>홈 서버 아키텍처</h3>
+            <div className="arch-diagram">
+              <div className="arch-row">
+                <span className="arch-box gold">외부 클라이언트</span>
+                <span className="arch-arrow">──▶ Port Forwarding ──▶</span>
+                <span className="arch-box">Router / Firewall</span>
+              </div>
+              <div className="arch-row" style={{paddingLeft: '3rem'}}>
+                <span className="arch-arrow">│</span>
+              </div>
+              <div className="arch-row">
+                <span className="arch-box">NAS (Synology)</span>
+                <span className="arch-arrow"> ←→ </span>
+                <span className="arch-box">NAS (UGREEN)</span>
+                <span className="arch-arrow">&nbsp;&nbsp;SMB Multi-Channel</span>
+              </div>
+              <div className="arch-row" style={{paddingLeft: '1rem'}}>
+                <span className="arch-arrow">├──▶ </span>
+                <span className="arch-box blue">Docker: Immich</span>
+                <span className="arch-arrow"> ├──▶ </span>
+                <span className="arch-box blue">Docker: Minecraft</span>
+                <span className="arch-arrow"> └──▶ </span>
+                <span className="arch-box blue">Docker: SCP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Infra;
+</file>
+
+<file path="src/context/themeContext.js">
+import { createContext } from 'react';
+
+const ThemeContext = createContext();
+
+export default ThemeContext;
+</file>
+
+<file path="src/context/ThemeProvider.jsx">
+import { useState, useEffect } from 'react';
+import ThemeContext from './themeContext';
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+</file>
+
+<file path="src/context/useTheme.js">
+import { useContext } from 'react';
+import ThemeContext from './themeContext';
+
+const useTheme = () => {
+  return useContext(ThemeContext);
+};
+
+export default useTheme;
+</file>
+
+<file path="src/pages/About.jsx">
+const About = () => {
+  return (
+    <section id="about" className="section-wrap">
+      <div className="container">
+        <div className="sec-header reveal">
+          <div>
+            <p className="sec-label">06 — About & Contact</p>
+            <h2 className="sec-title">저에 대해<br /><em>더 알고 싶다면</em></h2>
+          </div>
+        </div>
+
+        <div className="about-grid">
+          <div className="about-text reveal">
+            <p>안녕하세요, <strong>김재아</strong>입니다. 단순히 작동하는 코드를 넘어, <em>왜 그렇게 동작하는가</em>를 끊임없이 물어보는 개발자입니다.</p>
+            <p>개발 공부를 하면서 코드만 짜는 것에 그치지 않고, <strong>Docker로 환경을 구축하고, NAS로 서버를 운영하며</strong> 실제 서비스가 어떻게 돌아가는지 직접 경험해왔습니다.</p>
+            <p>공공 데이터 API의 성능 문제를 발견했을 때 <em>Python 스크립트를 직접 작성</em>해 해결한 것처럼, 문제 앞에서 도구를 가리지 않습니다.</p>
+            <p>디자이너와도 원활하게 소통할 수 있는 <strong>Figma 활용 능력</strong>과 반응형 UI 구현 경험을 갖추고 있으며, 계속해서 만들고 부수며 성장 중입니다.</p>
+          </div>
+          <div className="reveal reveal-delay-1">
+            <ul className="contact-list">
+              <li>
+                <a href="https://github.com/MJB9595" target="_blank" rel="noreferrer">
+                  <i className="fa-brands fa-github"></i> github.com/MJB9595
+                </a>
+              </li>
+              <li>
+                <a href="mailto:bjm00572773@gmail.com">
+                  <i className="fa-solid fa-envelope"></i> bjm00572773@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noreferrer">
+                  <i className="fa-solid fa-file-lines"></i> 이력서 다운로드 (PDF)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
+</file>
+
+<file path="src/pages/Home.jsx">
+import Hero from '../components/sections/Hero';
+import Skils from './Skils';
+import ProjectsPage from './ProjectsPage';
+import Infra from '../components/sections/Infra';
+import MiniProjects from './MiniProjects';
+import About from './About';
+
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <Skils />
+      <ProjectsPage />
+      <Infra />
+      <MiniProjects />
+      <About />
+    </>
+  );
+};
+
+export default Home;
+</file>
+
+<file path="src/pages/MiniProjects.jsx">
+const MiniProjects = () => {
+  return (
+    <section id="mini" className="section-wrap">
+      <div className="container">
+        <div className="sec-header reveal">
+          <div>
+            <p className="sec-label">05 — Archive</p>
+            <h2 className="sec-title">계속 만들고<br /><em>배웁니다</em></h2>
+          </div>
+        </div>
+
+        <div className="mini-grid">
+          <div className="mini-card reveal">
+            <div className="mini-icon">⏱️</div>
+            <p className="mini-title">타이머 앱</p>
+            <p className="mini-stack">React · useState</p>
+          </div>
+          <div className="mini-card reveal reveal-delay-1">
+            <div className="mini-icon">⛅</div>
+            <p className="mini-title">날씨 알림</p>
+            <p className="mini-stack">React · OpenWeather API</p>
+          </div>
+          <div className="mini-card reveal reveal-delay-2">
+            <div className="mini-icon">✅</div>
+            <p className="mini-title">TodoList</p>
+            <p className="mini-stack">React · Context API</p>
+          </div>
+          <div className="mini-card reveal reveal-delay-3">
+            <div className="mini-icon">💬</div>
+            <p className="mini-title">끝말잇기 게임</p>
+            <p className="mini-stack">JavaScript · DOM</p>
+          </div>
+          <div className="mini-card reveal reveal-delay-2">
+            <div className="mini-icon">📚</div>
+            <p className="mini-title">UniTrade</p>
+            <p className="mini-stack">JSP · MariaDB</p>
+          </div>
+          <div className="mini-card reveal reveal-delay-4">
+            <div className="mini-icon">🗺️</div>
+            <p className="mini-title">LocaPick</p>
+            <p className="mini-stack">MultiPle API · Spring Backend</p>
+          </div>
+          <div className="mini-card reveal">
+            <div className="mini-icon">🎨</div>
+            <p className="mini-title">Figma UI 작업</p>
+            <p className="mini-stack">Figma · UI/UX</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MiniProjects;
+</file>
+
+<file path="src/pages/Page.module.scss">
+
+</file>
+
+<file path="src/pages/Skils.jsx">
+const Skils = () => {
+  return (
+    <section id="stack" className="section-wrap">
+      <div className="container">
+        <div className="sec-header reveal">
+          <div>
+            <p className="sec-label">02 — Tech Stack</p>
+            <h2 className="sec-title">사용하는 <em>기술들</em></h2>
+          </div>
+          <p className="sec-note">코드를 쓰는 것 이상으로,<br />운영하고 배포하는 과정까지 이해합니다.</p>
+        </div>
+
+        <div className="tech-groups">
+          <div className="tech-group reveal reveal-delay-1">
+            <div className="tech-group-title"><i className="fa-solid fa-layer-group"></i> Frontend</div>
+            <div className="tech-list">
+              <span className="tech-pill hot">React</span>
+              <span className="tech-pill hot">Tailwind CSS</span>
+              <span className="tech-pill">JavaScript</span>
+              <span className="tech-pill">Vite</span>
+              <span className="tech-pill">HTML/SCSS</span>
+              <span className="tech-pill">Figma</span>
+            </div>
+          </div>
+          <div className="tech-group reveal reveal-delay-2">
+            <div className="tech-group-title"><i className="fa-solid fa-server"></i> Backend</div>
+            <div className="tech-list">
+              <span className="tech-pill hot">Spring Boot</span>
+              <span className="tech-pill hot">Java</span>
+              <span className="tech-pill">JSP / Tomcat</span>
+              <span className="tech-pill">RESTful API</span>
+            </div>
+          </div>
+          <div className="tech-group reveal reveal-delay-3">
+            <div className="tech-group-title"><i className="fa-solid fa-database"></i> Database</div>
+            <div className="tech-list">
+              <span className="tech-pill hot">MySQL</span>
+              <span className="tech-pill hot">MariaDB</span>
+              <span className="tech-pill">PhpMyAdmin</span>
+            </div>
+          </div>
+          <div className="tech-group reveal reveal-delay-4">
+            <div className="tech-group-title"><i className="fa-solid fa-gear"></i> Infra & Tools</div>
+            <div className="tech-list">
+              <span className="tech-pill hot">Docker</span>
+              <span className="tech-pill hot">Python</span>
+              <span className="tech-pill">Linux (Ubuntu)</span>
+              <span className="tech-pill">Git / GitHub</span>
+              <span className="tech-pill">NAS (Synology)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skils;
+</file>
+
+<file path="src/styles/_theme.scss">
+/* ─── DARK THEME (기본값) ─────────────────────────────────── */
+:root {
+  --bg:         #08080e;
+  --bg-2:       #0e0e18;
+  --bg-3:       #13131f;
+  --surface:    #1a1a2a;
+  --border:     rgba(255, 255, 255, 0.07);
+  --nav-bg:     rgba(8, 8, 14, 0.85);
+
+  --gold:       #f0c040;
+  --gold-dim:   rgba(240, 192, 64, 0.15);
+  --gold-glow:  rgba(240, 192, 64, 0.35);
+  --blue:       #4b6ef5;
+  --blue-dim:   rgba(75, 110, 245, 0.15);
+  --blue-tag:   rgba(75, 110, 245, 0.3);
+
+  --text:       #e4e4f0;
+  --text-dim:   #8888a8;
+  --text-faint: #44445a;
+
+  --infra-bg:   linear-gradient(135deg, #0e0e18 0%, #08080e 100%);
+  --noise-opacity: 0.4;
+
+  --radius:     12px;
+  --radius-lg:  20px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── LIGHT THEME ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:         #f5f4f0;
+  --bg-2:       #edecea;
+  --bg-3:       #e4e2de;
+  --surface:    #ffffff;
+  --border:     rgba(0, 0, 0, 0.09);
+  --nav-bg:     rgba(245, 244, 240, 0.92);
+
+  --gold:       #b87800;
+  --gold-dim:   rgba(184, 120, 0, 0.1);
+  --gold-glow:  rgba(184, 120, 0, 0.25);
+  --blue:       #3a58d4;
+  --blue-dim:   rgba(58, 88, 212, 0.08);
+  --blue-tag:   rgba(58, 88, 212, 0.18);
+
+  --text:       #18182a;
+  --text-dim:   #52526e;
+  --text-faint: #a0a0be;
+
+  --infra-bg:   linear-gradient(135deg, #edecea 0%, #f5f4f0 100%);
+  --noise-opacity: 0.15;
+}
+</file>
+
+<file path="src/styles/_variables.scss">
+// SCSS 변수로 사용할 상수값들을 정의합니다.
+$transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+$radius-base: 12px;
+$radius-lg: 20px;
+$max-width-container: 1140px;
+</file>
+
+<file path="src/App.jsx">
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import Home from './pages/Home';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* 싱글 페이지 스크롤 방식이므로 Home 안에 모든 섹션이 들어갑니다 */}
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/main.jsx">
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import { ThemeProvider } from './context/ThemeProvider.jsx';
+
+// 전역 스타일 및 폰트 아이콘 임포트
+import './styles/global.scss';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // 터미널에서 npm i @fortawesome/fontawesome-free 설치 권장
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+)
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+</file>
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      /* 다크 모드 (기본) */
+      .bg { fill: #08080e; }
+      .text { fill: #f0c040; }
+      .glow { filter: drop-shadow(0 0 3px #f0c04088); }
+
+      /* 라이트 모드 */
+      @media (prefers-color-scheme: light) {
+        .bg { fill: #f5f4f0; }
+        .text { fill: #b87800; }
+        .glow { filter: drop-shadow(0 0 3px #b8780044); }
+      }
+    </style>
+    <!-- 골드 그라데이션 (선택 사항) -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0c040" />
+      <stop offset="100%" stop-color="#d4a020" />
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect class="bg" width="64" height="64" rx="12" />
+
+  <!-- JA 모노그램 -->
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+        font-family="'JetBrains Mono', 'Consolas', monospace"
+        font-size="28" font-weight="bold"
+        class="text glow">JA</text>
+</svg>
+</file>
+
+<file path="src/components/sections/Hero.jsx">
+import HeroScene from './HeroScene';
+
+const Hero = () => {
+  return (
+    <section id="hero">
+      <div className="hero-bg-grid"></div>
+      <div className="hero-glow"></div>
+
+      <div className="container">
+        <div className="hero-content">
+          <p className="hero-tag">Full-Stack Developer</p>
+          <h1 className="hero-name">
+            <span className="hero-name-kr">김재아</span><br />
+            <em>builds things</em><br />
+            that last.
+          </h1>
+          <p className="hero-desc">
+            인프라부터 프론트엔드까지 —<br />
+            데이터 파이프라인을 직접 설계하고, Docker로 서버를 구축하며,<br />
+            React로 사용자 경험을 완성하는 개발자입니다.
+          </p>
+          <div className="hero-cta">
+            <a href="#projects" className="btn btn-primary">
+              <i className="fa-solid fa-arrow-down"></i> 프로젝트 보기
+            </a>
+            <a href="https://github.com/MJB9595" className="btn btn-outline" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <HeroScene />
+
+      <div className="hero-float">
+        <div className="float-card">
+          <div className="float-card-label">NAS 운영</div>
+          Synology + UGREEN<br/>2대 동시 운영 중
+        </div>
+        <div className="float-card">
+          <div className="float-card-label">Data Handling</div>
+          JSON 대용량 분할<br/>Python 최적화 처리
+        </div>
+        <div className="float-card">
+          <div className="float-card-label">Containerized</div>
+          Docker 기반<br/>서비스 환경 구축
+        </div>
+      </div>
+
+      <div className="hero-scroll">
+        <div className="scroll-line"></div>
+        scroll
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+</file>
+
+<file path="src/pages/ProjectDetailModal.jsx">
+import { useEffect, useState } from "react";
+import "./ProjectDetailModal.scss";
+
+// ── 간단한 신택스 하이라이터 (키워드 기반) ──
+function syntaxHighlight(line, lang) {
+  const escHtml = (s) =>
+    s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+  let escaped = escHtml(line);
+
+  if (lang === "java" || lang === "javascript" || lang === "jsx") {
+    const keywords =
+      /\b(public|private|protected|class|interface|new|return|void|if|else|for|while|import|export|const|let|var|async|await|function|extends|implements|static|final|try|catch|throws|null|true|false|this|super|from|of|in|default)\b/g;
+    const types =
+      /\b(String|List|Map|int|double|boolean|HttpHeaders|ResponseEntity|UserDetails|void|Promise|Array)\b/g;
+    const fns = /\b([a-zA-Z_][a-zA-Z0-9_]*)\s*(?=\()/g;
+    const strings = /(".*?"|'.*?'|`.*?`)/g;
+    const comments = /(\/\/.*$|#.*$)/;
+
+    // 주석 우선 처리
+    if (comments.test(escaped)) {
+      return escaped.replace(comments, '<span class="sh-comment">$1</span>');
+    }
+
+    escaped = escaped
+      .replace(strings, '<span class="sh-string">$1</span>')
+      .replace(types, '<span class="sh-type">$1</span>')
+      .replace(fns, '<span class="sh-fn">$1</span>')
+      .replace(keywords, '<span class="sh-kw">$1</span>');
+  } else if (lang === "scss" || lang === "css") {
+    const props = /([a-z-]+)\s*(?=:)/g;
+    const values = /:\s*(.+)/g;
+    const selectors = /^([.#&][\w-]+)/g;
+    const comments = /(\/\/.*$)/;
+
+    if (comments.test(escaped)) {
+      return escaped.replace(comments, '<span class="sh-comment">$1</span>');
+    }
+    escaped = escaped
+      .replace(selectors, '<span class="sh-fn">$1</span>')
+      .replace(props, '<span class="sh-type">$1</span>');
+  }
+
+  return escaped;
+}
+
+const ProjectDetailModal = ({ project, onClose }) => {
+  const [activeTab, setActiveTab] = useState("overview");
+  const [activeCode, setActiveCode] = useState(0);
+
+  // ESC 키로 닫기 + 배경 스크롤 잠금
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  // 탭 변경 시 코드 선택 초기화
+  useEffect(() => {
+    setActiveCode(0);
+  }, [activeTab]);
+
+  const tabs = [
+    { id: "overview", label: "개요", icon: "fa-solid fa-layer-group" },
+    { id: "code", label: "코드 리뷰", icon: "fa-solid fa-code" },
+    { id: "review", label: "분석", icon: "fa-solid fa-chart-bar" },
+  ];
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div
+        className="modal-panel"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={project.title}
+      >
+        {/* ── 모달 헤더 ── */}
+        <div className="modal-header">
+          <div className="modal-header-left">
+            <span className="modal-type-badge">{project.type}</span>
+            <div>
+              <h2 className="modal-title">{project.title}</h2>
+              <p className="modal-subtitle">{project.subtitle}</p>
+            </div>
+          </div>
+          <div className="modal-header-right">
+            <div className="modal-links">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="modal-link-btn"
+                  title="GitHub"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+              )}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="modal-link-btn"
+                  title="Live Demo"
+                >
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              )}
+            </div>
+            <button className="modal-close" onClick={onClose} title="닫기">
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        {/* ── 기술 스택 태그 ── */}
+        <div className="modal-stack-row">
+          {project.stack.map((s) => (
+            <span key={s} className="modal-stack-tag">
+              {s}
+            </span>
+          ))}
+        </div>
+
+        {/* ── 탭 네비게이션 ── */}
+        <div className="modal-tabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`modal-tab ${activeTab === tab.id ? "active" : ""}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              <i className={tab.icon}></i>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* ── 탭 콘텐츠 ── */}
+        <div className="modal-body">
+
+          {/* ── 개요 탭 ── */}
+          {activeTab === "overview" && (
+            <div className="tab-content" key="overview">
+              {/* 프로젝트 개요 */}
+              <div className="overview-section">
+                <h4 className="overview-label">
+                  <i className="fa-solid fa-circle-info"></i> 프로젝트 개요
+                </h4>
+                <p className="overview-text">{project.overview}</p>
+              </div>
+
+              {/* PSR 카드 */}
+              <div className="psr-detail-grid">
+                <div className="psr-detail-card problem">
+                  <div className="psr-detail-header">
+                    <span className="psr-dot red"></span>
+                    <span className="psr-detail-label">Problem</span>
+                  </div>
+                  <p className="psr-detail-text">{project.problem}</p>
+                </div>
+                <div className="psr-detail-card solution">
+                  <div className="psr-detail-header">
+                    <span className="psr-dot blue"></span>
+                    <span className="psr-detail-label">Solution</span>
+                  </div>
+                  <p className="psr-detail-text">{project.solution}</p>
+                </div>
+                <div className="psr-detail-card result">
+                  <div className="psr-detail-header">
+                    <span className="psr-dot green"></span>
+                    <span className="psr-detail-label">Result</span>
+                  </div>
+                  <p className="psr-detail-text">{project.result}</p>
+                </div>
+              </div>
+
+              {/* 아키텍처 다이어그램 */}
+              {project.architecture && project.architecture.length > 0 && (
+                <div className="arch-section">
+                  <h4 className="overview-label">
+                    <i className="fa-solid fa-diagram-project"></i> 아키텍처
+                  </h4>
+                  <div className="modal-arch-diagram">
+                    {project.architecture.map((node, i) => (
+                      <span
+                        key={i}
+                        className={`modal-arch-node ${node.type}`}
+                      >
+                        {node.label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ── 코드 리뷰 탭 ── */}
+          {activeTab === "code" && (
+            <div className="tab-content" key="code">
+              {project.codeHighlights && project.codeHighlights.length > 0 ? (
+                <>
+                  {/* 파일 탭 선택 */}
+                  <div className="code-selector">
+                    {project.codeHighlights.map((c, i) => (
+                      <button
+                        key={i}
+                        className={`code-sel-btn ${activeCode === i ? "active" : ""}`}
+                        onClick={() => setActiveCode(i)}
+                      >
+                        <i className="fa-solid fa-file-code"></i>
+                        {c.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* 코드 블록 */}
+                  {project.codeHighlights[activeCode] && (
+                    <div className="code-block-wrap">
+                      <div className="code-block-header">
+                        <div className="code-dots">
+                          <span className="dot red"></span>
+                          <span className="dot yellow"></span>
+                          <span className="dot green"></span>
+                        </div>
+                        <span className="code-block-filename">
+                          <i className="fa-solid fa-file-code"></i>
+                          {project.codeHighlights[activeCode].label}
+                        </span>
+                        <span className="code-block-lang">
+                          {project.codeHighlights[activeCode].lang}
+                        </span>
+                      </div>
+                      <pre className="code-block">
+                        <code>
+                          {project.codeHighlights[activeCode].code
+                            .split("\n")
+                            .map((line, i) => (
+                              <div key={i} className="code-row">
+                                <span className="line-num">{i + 1}</span>
+                                <span
+                                  className="line-text"
+                                  dangerouslySetInnerHTML={{
+                                    __html: syntaxHighlight(
+                                      line,
+                                      project.codeHighlights[activeCode].lang
+                                    ),
+                                  }}
+                                />
+                              </div>
+                            ))}
+                        </code>
+                      </pre>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="empty-state">
+                  <i className="fa-solid fa-code"></i>
+                  <p>코드 하이라이트가 준비 중입니다.</p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ── 분석 탭 ── */}
+          {activeTab === "review" && (
+            <div className="tab-content" key="review">
+              {/* 잘한 점 / 개선 포인트 */}
+              <div className="review-grid">
+                <div className="review-card strengths">
+                  <h4 className="review-title">
+                    <i className="fa-solid fa-circle-check"></i> 잘한 점
+                  </h4>
+                  <ul className="review-list">
+                    {project.review.strengths.map((s, i) => (
+                      <li key={i} className="review-item">
+                        <span className="review-bullet good">✦</span>
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="review-card improvements">
+                  <h4 className="review-title">
+                    <i className="fa-solid fa-arrow-trend-up"></i> 개선 포인트
+                  </h4>
+                  <ul className="review-list">
+                    {project.review.improvements.map((s, i) => (
+                      <li key={i} className="review-item">
+                        <span className="review-bullet improve">▶</span>
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* 기술 스택 상세 */}
+              <div className="stack-detail-section">
+                <h4 className="overview-label">
+                  <i className="fa-solid fa-layer-group"></i> 사용 기술 상세
+                </h4>
+                <div className="stack-detail-grid">
+                  {project.stack.map((s) => (
+                    <div key={s} className="stack-detail-item">
+                      <i className="fa-solid fa-check-circle"></i>
+                      {s}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectDetailModal;
+</file>
+
+<file path="src/pages/ProjectDetailModal.scss">
+/* ================================================================
+   ProjectDetailModal.scss
+   포트폴리오 기존 디자인 시스템(CSS variables, 폰트, 색상) 완전 호환
+   ================================================================ */
+
+/* ── 오버레이 ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(8, 8, 14, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: overlayIn 0.2s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 패널 ── */
+.modal-panel {
+  background: var(--bg-2);
+  border: 1px solid rgba(240, 192, 64, 0.18);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(240, 192, 64, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  animation: panelIn 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── 헤더 ── */
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: linear-gradient(to bottom, var(--bg-3), var(--bg-2));
+}
+
+.modal-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.modal-type-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #08080e;
+  background: var(--gold);
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 0.28rem;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.modal-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+
+.modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.modal-links {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.modal-link-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: none;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-dim);
+    transform: translateY(-1px);
+  }
+}
+
+.modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: none;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: rgba(255, 80, 80, 0.45);
+    color: #ff5f57;
+    background: rgba(255, 80, 80, 0.08);
+    transform: rotate(90deg);
+  }
+}
+
+/* ── 스택 태그 ── */
+.modal-stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  padding: 0.9rem 2rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+
+.modal-stack-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  padding: 0.18rem 0.52rem;
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-tag);
+  border-radius: 3px;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+}
+
+/* ── 탭 ── */
+.modal-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  flex-shrink: 0;
+  background: var(--bg-2);
+}
+
+.modal-tab {
+  /* 박스 느낌 완전 제거 */
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  outline: none;
+
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  cursor: none;
+  letter-spacing: 0.04em;
+  position: relative;
+  /* margin-bottom -1px: 하단 border-bottom이 컨테이너 border 위에 오도록 */
+  margin-bottom: -1px;
+
+  i {
+    font-size: 0.65rem;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover {
+    color: var(--text-dim);
+    i { opacity: 0.85; }
+  }
+
+  &.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    i { opacity: 1; }
+  }
+}
+
+
+
+/* ── 본문 (스크롤 가능) ── */
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 1.8rem 2rem;
+  background: var(--bg-2);
+
+  /* 스크롤바 */
+  &::-webkit-scrollbar { width: 3px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: var(--gold-glow);
+    border-radius: 2px;
+    &:hover { background: var(--gold); }
+  }
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  animation: tabIn 0.2s ease;
+}
+
+@keyframes tabIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   개요 탭
+   ================================================================ */
+.overview-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  i { opacity: 0.85; }
+}
+
+.overview-text {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  line-height: 1.85;
+}
+
+.overview-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  position: relative;
+  overflow: hidden;
+
+  /* 미묘한 왼쪽 악센트 */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+/* ── PSR 상세 카드 ── */
+.psr-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.psr-detail-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+
+  &.problem {
+    border-top: 2px solid rgba(255, 95, 87, 0.55);
+    &:hover { background: rgba(255, 95, 87, 0.04); }
+  }
+  &.solution {
+    border-top: 2px solid rgba(75, 110, 245, 0.55);
+    &:hover { background: rgba(75, 110, 245, 0.04); }
+  }
+  &.result {
+    border-top: 2px solid rgba(50, 215, 100, 0.55);
+    &:hover { background: rgba(50, 215, 100, 0.04); }
+  }
+}
+
+.psr-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.psr-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &.red   { background: #ff5f57; box-shadow: 0 0 6px rgba(255, 95, 87, 0.5); }
+  &.blue  { background: #4b6ef5; box-shadow: 0 0 6px rgba(75, 110, 245, 0.5); }
+  &.green { background: #32d764; box-shadow: 0 0 6px rgba(50, 215, 100, 0.5); }
+}
+
+.psr-detail-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.psr-detail-text {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* ── 아키텍처 다이어그램 ── */
+.arch-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+.modal-arch-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.6rem 0;
+}
+
+.modal-arch-node {
+  padding: 0.32rem 0.72rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: var(--transition);
+
+  &.gold {
+    background: rgba(240, 192, 64, 0.1);
+    border: 1px solid rgba(240, 192, 64, 0.38);
+    color: var(--gold);
+    &:hover { background: rgba(240, 192, 64, 0.18); }
+  }
+  &.blue {
+    background: var(--blue-dim);
+    border: 1px solid var(--blue-tag);
+    color: var(--blue);
+  }
+  &.normal {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: #8888a8;
+  }
+  &.arrow {
+    color: var(--text-faint);
+    background: none;
+    border: none;
+    padding: 0 0.15rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ================================================================
+   코드 탭
+   ================================================================ */
+
+/* 파일 선택 버튼 행 */
+.code-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.code-sel-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-align: left;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: none;
+  transition: var(--transition);
+  white-space: nowrap;
+
+  i {
+    font-size: 0.62rem;
+    opacity: 0.65;
+  }
+
+  &:hover {
+    border-color: var(--gold-glow);
+    color: var(--text);
+  }
+
+  &.active {
+    border-color: var(--gold-glow);
+    background: var(--gold-dim);
+    color: var(--gold);
+    i { opacity: 1; }
+  }
+}
+
+/* 코드 블록 */
+.code-block-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.code-block-header {
+  background: #0c0c1a;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    &.red    { background: #ff5f57; }
+    &.yellow { background: #febc2e; }
+    &.green  { background: #28c840; }
+  }
+}
+
+.code-block-filename {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  i {
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 0.6rem;
+  }
+}
+
+.code-block-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.code-block {
+  background: #09091a;
+  margin: 0;
+  padding: 0.8rem 0;
+  overflow-x: auto;
+  max-height: 400px;
+  font-size: 0;
+
+  &::-webkit-scrollbar { height: 3px; }
+  &::-webkit-scrollbar-thumb { background: var(--gold-glow); border-radius: 2px; }
+}
+
+.code-row {
+  display: flex;
+  align-items: baseline;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.75;
+  padding: 0 1.2rem;
+  transition: background 0.12s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.025);
+  }
+}
+
+.line-num {
+  color: #35354e;
+  min-width: 2.4rem;
+  user-select: none;
+  flex-shrink: 0;
+  font-size: 0.63rem;
+  text-align: right;
+  padding-right: 1.2rem;
+}
+
+.line-text {
+  color: #c4c4e0;
+  white-space: pre;
+}
+
+/* 신택스 하이라이터 */
+.sh-kw     { color: #a78bfa; }   /* 키워드: 보라 */
+.sh-fn     { color: #60a5fa; }   /* 함수명: 파랑 */
+.sh-type   { color: #34d399; }   /* 타입: 초록 */
+.sh-string { color: #fcd34d; }   /* 문자열: 노랑 */
+.sh-comment{ color: #3d3d5c; font-style: italic; }  /* 주석: 어두운 회색 */
+
+/* 빈 상태 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem;
+  color: var(--text-faint);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+
+  i { font-size: 1.8rem; opacity: 0.4; }
+}
+
+/* ================================================================
+   분석 탭
+   ================================================================ */
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.review-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+
+  &.strengths {
+    border-top: 2px solid rgba(50, 215, 100, 0.5);
+  }
+  &.improvements {
+    border-top: 2px solid rgba(240, 192, 64, 0.5);
+  }
+}
+
+.review-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  i { font-size: 0.65rem; }
+
+  .review-card.strengths &   i { color: #32d764; }
+  .review-card.improvements & i { color: var(--gold); }
+}
+
+.review-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.review-item {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  align-items: flex-start;
+}
+
+.review-bullet {
+  flex-shrink: 0;
+  font-size: 0.55rem;
+  margin-top: 0.38rem;
+
+  &.good    { color: #32d764; }
+  &.improve { color: var(--gold); }
+}
+
+/* ── 기술 스택 상세 ── */
+.stack-detail-section {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+}
+
+.stack-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.55rem;
+}
+
+.stack-detail-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.48rem 0.72rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--gold-glow);
+    color: var(--text);
+  }
+
+  i {
+    color: var(--gold);
+    font-size: 0.6rem;
+    flex-shrink: 0;
+  }
+}
+
+/* ── "상세 보기" 버튼 스타일 (ProjectsPage에서 참조) ── */
+.project-detail-btn {
+  background: var(--gold-dim) !important;
+  border-color: var(--gold-glow) !important;
+  color: var(--gold) !important;
+  cursor: none;
+
+  &:hover {
+    background: rgba(240, 192, 64, 0.25) !important;
+    border-color: var(--gold) !important;
+  }
+}
+
+/* ================================================================
+   라이트 테마 대응
+   ================================================================ */
+[data-theme="light"] {
+  .modal-overlay {
+    background: rgba(230, 228, 222, 0.92);
+  }
+
+  .modal-panel {
+    border-color: rgba(184, 120, 0, 0.2);
+    box-shadow:
+      0 32px 80px rgba(0, 0, 0, 0.18),
+      0 0 0 1px rgba(184, 120, 0, 0.08);
+  }
+
+  .modal-header {
+    background: linear-gradient(to bottom, var(--bg-3), var(--bg-2));
+  }
+
+  .modal-tabs {
+    background: var(--bg-2);
+    border-bottom-color: var(--border);
+  }
+
+  /* 탭 버튼: 라이트 모드에서도 배경 없이 underline 스타일만 */
+  .modal-tab {
+    background: none;
+    border-color: transparent;
+    color: var(--text-faint);
+
+    &:hover { color: var(--text-dim); }
+
+    &.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+      background: none;
+    }
+  }
+
+  .modal-link-btn:hover {
+    background: var(--gold-dim);
+  }
+
+  .modal-arch-node {
+    &.normal {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
+      color: var(--text-dim);
+    }
+  }
+
+  .code-block-wrap {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .code-block-header {
+    background: #ebe9e3;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .code-block {
+    background: #f0ede8;
+  }
+
+  .code-row:hover {
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  .line-num   { color: #b0aead; }
+  .line-text  { color: #3a3a52; }
+
+  .sh-kw     { color: #7c3aed; }
+  .sh-fn     { color: #2563eb; }
+  .sh-type   { color: #059669; }
+  .sh-string { color: #b45309; }
+  .sh-comment{ color: #c0bdb9; }
+}
+
+/* ================================================================
+   반응형
+   ================================================================ */
+@media (max-width: 720px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-panel {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+  }
+
+  .modal-header {
+    padding: 1.4rem 1.25rem 1rem;
+  }
+
+  .modal-stack-row {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .modal-tabs {
+    padding: 0 1.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  .modal-tab {
+    padding: 0.75rem 0.9rem;
+    white-space: nowrap;
+    font-size: 0.66rem;
+  }
+
+  .modal-body {
+    padding: 1.4rem 1.25rem;
+  }
+
+  /* PSR 3열 → 1열 */
+  .psr-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  /* 리뷰 2열 → 1열 */
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 아키텍처 노드 */
+  .modal-arch-diagram {
+    font-size: 0.64rem;
+  }
+
+  /* 코드 셀렉터 */
+  .code-selector {
+    flex-direction: column;
+  }
+
+  .code-block {
+    max-height: 280px;
+    font-size: 0;
+  }
+
+  .code-row {
+    font-size: 0.66rem;
+    line-height: 1.65;
+    padding: 0 0.75rem;
+  }
+
+  .modal-title {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-type-badge {
+    margin-top: 0;
+  }
+
+  .stack-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</file>
+
+<file path="src/styles/_sections.scss">
+/* src/styles/_sections.scss */
+
+/* ─── 1. CUSTOM CURSOR ──────────────────────────────────────── */
+#cursor {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
+
+#cursor-dot {
+  width: 8px; height: 8px; background: var(--gold);
+  border-radius: 50%; transform: translate(-50%, -50%);
+  transition: transform 0.1s, background 0.4s;
+}
+
+#cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--gold); border-radius: 50%;
+  transform: translate(-50%, -50%); pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.18s ease, width 0.2s, height 0.2s, border-color 0.4s;
+  opacity: 0.6;
+}
+
+body.hovering #cursor-ring {
+  width: 56px; height: 56px; border-color: var(--gold); opacity: 1;
+}
+
+/* ─── 2. HERO ───────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 8rem 0 4rem; position: relative; overflow: hidden;
+
+  .hero-bg-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%);
+    transition: background-image 0.4s;
+  }
+
+  .hero-glow {
+    position: absolute; z-index: 0;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-dim) 0%, transparent 70%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+    &::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1.05;
+    letter-spacing: -0.02em; margin-bottom: 1.2rem; color: var(--text);
+    overflow: visible; padding-bottom: 0.08em;
+
+    em {
+      font-style: normal; color: var(--gold); position: relative; display: inline-block;
+      &::after { content: ''; position: absolute; bottom: 0.05em; left: 0; right: 0; height: 3px; background: var(--gold); opacity: 0.4; }
+    }
+  }
+
+  .hero-name-kr {
+    display: inline-block; position: relative; color: var(--text);
+    &::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 4px; background: var(--gold); border-radius: 2px; opacity: 0.55; }
+  }
+
+  .hero-desc { font-size: 1.1rem; color: var(--text-dim); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-faint);
+    letter-spacing: 0.1em; text-transform: uppercase; z-index: 1;
+    animation: scrollBounce 2s ease-in-out infinite;
+
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
+  }
+
+  .hero-float {
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 1rem; opacity: 0.7; z-index: 1;
+
+    .float-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 0.9rem 1.2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      color: var(--text-dim); animation: floatAnim 4s ease-in-out infinite; min-width: 180px;
+      transition: background var(--transition), border-color var(--transition);
+      &:nth-child(2) { animation-delay: 1.3s; }
+      &:nth-child(3) { animation-delay: 2.6s; }
+
+      .float-card-label { color: var(--gold); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+    }
+  }
+
+  /* ─── 3D Scene (Ramiel Cube) ───────────────────────────── */
+  .hero-scene {
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    width: 440px;
+    height: 440px;
+    z-index: 1;
+    pointer-events: none;
+
+    canvas {
+      background: transparent !important;
+      pointer-events: auto !important;
+      touch-action: none;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50%       { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); } 
+  50% { transform: translateX(-50%) translateY(6px); } 
+}
+@keyframes floatAnim { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-8px); } 
+}
+
+/* ─── 3. TECH STACK ─────────────────────────────────────────── */
+.tech-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.tech-group {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); }
+
+  .tech-group-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+  .tech-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tech-pill {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 0.3rem 0.7rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); transition: var(--transition);
+    &.hot { border-color: rgba(240, 192, 64, 0.4); color: var(--gold); background: var(--gold-dim); }
+    &:hover { color: var(--text); border-color: var(--text-faint); }
+  }
+}
+[data-theme="light"] .tech-pill.hot { border-color: rgba(184, 120, 0, 0.35); }
+
+/* ─── 4. PROJECTS ───────────────────────────────────────────── */
+.project-grid { display: grid; gap: 1.5rem; }
+
+.project-card {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: grid; grid-template-columns: 1fr;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+  &:hover { border-color: var(--gold-glow); transform: translateY(-4px); }
+
+  &.featured { grid-template-columns: 1fr 1fr; }
+  &.featured-flip { 
+    grid-template-columns: 1fr 1fr; 
+    .project-body { order: 1; }
+    .project-visual { order: 2; }
+  }
+}
+
+/* 프로젝트 Visual 공통 */
+.project-visual { 
+  background: #13131f; display: flex; align-items: center; justify-content: center; min-height: 220px; position: relative; overflow: hidden; 
+}
+.project-card.featured .project-visual { min-height: 100%; }
+
+.project-visual-inner { 
+  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #44445a; line-height: 1.8; padding: 2rem; position: relative; z-index: 1; width: 100%; 
+}
+
+/* Visual 내부 요소들 */
+.code-line { display: flex; gap: 0.8rem; }
+.code-num { color: #44445a; min-width: 1.5rem; }
+.code-kw { color: #a78bfa; }
+.code-fn { color: #60a5fa; }
+.code-comment { color: #44445a; font-style: italic; }
+.code-line-img { display: flex; gap: 0.8rem; }
+.banner { width: 60%; border-radius: 20px; margin: 10%; }
+.visual-badge { position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: #08080e; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.3rem 0.6rem; border-radius: 4px; text-transform: uppercase; }
+
+/* 프로젝트 Body 공통 */
+.project-body { padding: 2rem; }
+.project-num { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+.project-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 0.8rem; line-height: 1.2; color: var(--text); }
+.project-desc { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1.5rem; line-height: 1.7; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.project-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.2rem 0.55rem; background: var(--blue-dim); border: 1px solid var(--blue-tag); border-radius: 3px; color: var(--blue); }
+
+/* PSR 카드 영역 */
+.psr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem; }
+.psr-card { background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem; transition: background var(--transition); }
+.psr-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.psr-text { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+
+/* 프로젝트 하단 버튼 */
+.project-links { display: flex; gap: 0.8rem; }
+.project-link { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); padding: 0.4rem 0.9rem; border-radius: 4px; transition: var(--transition); cursor: none; }
+.project-link:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── 프로젝트 03, 04 카드 (1:1 비율 맞춤) ── */
+.project-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+
+  .project-card {
+    display: flex;
+    flex-direction: column; /* 카드를 세로 방향 플렉스로 변경 */
+
+    .project-visual,
+    .project-body {
+      flex: 1; /* ★ 핵심: 상/하단 높이를 동일하게 분배 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* 내부 콘텐츠 수직 중앙 정렬 */
+    }
+
+    .project-visual {
+      min-height: auto; /* 고정 높이 해제 */
+    }
+  }
+}
+
+/* ── 백세주 목업 비주얼 전용 ── */
+.tocobo-visual {
+  background: linear-gradient(135deg, #0d0d1a 0%, #0f0e1c 100%);
+  display: flex; align-items: center; justify-content: center; padding: 2.5rem 2rem;
+
+  .tocobo-mockup { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
+
+  .mock-desktop { background: #1a1a2a; border: 1px solid rgba(240, 192, 64, 0.3); border-radius: 8px; width: 100%; max-width: 270px; overflow: hidden; }
+  .mock-bar { height: 10px; background: #0e0e18; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 7px; gap: 4px; }
+  .mock-bar::before { content:''; width:4px; height:4px; border-radius:50%; background:#ff5f57; }
+  .mock-bar::after { content:''; width:4px; height:4px; border-radius:50%; background:#febc2e; }
+  
+  .mock-screen { padding: 0; background-size: cover; background-position: top center; background-repeat: no-repeat; overflow: hidden; transition: background-position 2s ease-in-out; }
+  .screen-desktop { min-height: 150px; background-image: url('/bekseju_desktop.png'); }
+  .screen-tablet { background-image: url('/bekseju_tablet.png'); }
+  .screen-mobile { background-image: url('/bekseju_mobile.png'); }
+
+  .mock-devices { display: flex; gap: 0.8rem; align-items: flex-end; }
+  .mock-tablet { background: #1a1a2a; border: 1px solid rgba(75, 110, 245, 0.35); border-radius: 6px; width: 88px; overflow: hidden; padding-bottom: 4px; }
+  .mock-tablet .mock-bar { height: 7px; }
+  .mock-mobile { background: #1a1a2a; border: 1px solid rgba(240, 192, 64, 0.35); border-radius: 9px; width: 50px; overflow: hidden; padding-bottom: 5px; }
+  
+  .mock-notch { width: 16px; height: 4px; background: #08080e; border-radius: 0 0 4px 4px; margin: 0 auto 3px; }
+  .mock-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #44445a; letter-spacing: 0.08em; }
+}
+.project-card:hover .mock-screen { background-position: bottom center; } /* 호버 시 스크롤 애니메이션 */
+[data-theme="light"] .mock-desktop, [data-theme="light"] .mock-tablet, [data-theme="light"] .mock-mobile { border-color: var(--border); }
+
+/* ─── 5. INFRA ──────────────────────────────────────────────── */
+#infra { background: var(--infra-bg); }
+.infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.infra-card { 
+  background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.8rem; transition: border-color var(--transition), transform var(--transition), background var(--transition); 
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); }
+  &.wide { grid-column: span 2; }
+}
+
+.infra-icon { width: 48px; height: 48px; background: var(--gold-dim); border: 1px solid rgba(240, 192, 64, 0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.2rem; color: var(--gold); transition: background var(--transition); }
+.infra-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+.infra-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+
+.infra-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.infra-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; padding: 0.2rem 0.55rem; background: var(--gold-dim); border: 1px solid rgba(240, 192, 64, 0.25); border-radius: 3px; color: var(--gold); transition: background var(--transition); }
+
+.arch-diagram { background: #08080e; border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #8888a8; overflow-x: auto; margin-top: 1.2rem; }
+.arch-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; }
+.arch-box { background: #1a1a2a; border: 1px solid rgba(255,255,255,0.07); padding: 0.35rem 0.75rem; border-radius: 5px; white-space: nowrap; color: #8888a8; }
+.arch-box.gold { border-color: rgba(240, 192, 64, 0.5); color: #f0c040; background: rgba(240, 192, 64, 0.12); }
+.arch-arrow { color: #44445a; }
+
+/* ─── 6. MINI PROJECTS ──────────────────────────────────────── */
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.mini-card {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; transition: border-color var(--transition), transform var(--transition), background var(--transition); cursor: none;
+  &:hover { border-color: var(--gold-glow); transform: translateY(-3px); background: var(--surface); }
+  
+  .mini-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+  .mini-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; color: var(--text); }
+  .mini-stack { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--gold); }
+}
+
+/* ─── 7. ABOUT / CONTACT ────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.about-text p { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 1rem; line-height: 1.8; }
+.about-text p strong { color: var(--text); font-weight: 600; }
+.about-text p em { color: var(--gold); font-style: normal; }
+
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+.contact-list a { 
+  display: flex; align-items: center; gap: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--text-dim); text-decoration: none; padding: 0.85rem 1.1rem; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); transition: var(--transition); cursor: none; 
+  &:hover { border-color: var(--gold); color: var(--gold); transform: translateX(4px); }
+  i { width: 18px; color: var(--gold); }
+}
+
+/* ─── 8. FOOTER ─────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+.footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-faint); em { color: var(--gold); font-style: normal; } }
+.footer-back { 
+  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-dim); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color var(--transition); cursor: none; 
+  &:hover { color: var(--gold); }
+}
+
+/* ─── 9. SCROLL REVEAL UTILS ────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── 10. RESPONSIVE (MEDIA QUERIES) ────────────────────────── */
+@media (max-width: 1024px) {
+  #hero .hero-float { position: static; transform: none; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin-top: 2.5rem; opacity: 1; gap: 0.75rem; }
+  #hero .hero-float .float-card { min-width: 0; flex: 1 1 140px; }
+  .hero-scene { right: 4rem; width: 320px; height: 360px; }
+}
+
+@media (max-width: 900px) {
+  #hero { padding: 7rem 0 3rem; align-items: flex-start; }
+  #hero .hero-float { display: none; }
+  .hero-scene { width: 240px; height: 260px; top: 5%; right: 0.5rem; }
+  .tech-groups { grid-template-columns: repeat(2, 1fr); }
+  .project-card.featured, .project-card.featured-flip { grid-template-columns: 1fr; }
+  .project-card.featured-flip .project-body { order: 2; }
+  .project-card.featured-flip .project-visual { order: 1; min-height: 220px; }
+  .project-row { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .infra-card.wide { grid-column: span 2; }
+  .infra-card { padding: 1.4rem; }
+  .arch-diagram { padding: 1rem; font-size: 0.65rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { padding: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  #cursor, #cursor-ring { display: none; }
+  .btn, .contact-list a, .project-link, .footer-back { cursor: pointer; }
+  #hero { padding: 6rem 0 5rem; min-height: auto; }
+  .hero-name { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  .hero-cta { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .btn { width: 100%; justify-content: center; }
+  .hero-float, .hero-scene { display: none; }
+  #hero .hero-scroll {
+    display: flex;
+    bottom: 1rem;
+  }
+  .tech-groups { grid-template-columns: 1fr; gap: 1rem; }
+  .infra-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .infra-card { padding: 1.2rem; }
+  .infra-card.wide { grid-column: span 1; }
+  .infra-title { font-size: 0.85rem; }
+  .infra-desc { font-size: 0.78rem; }
+  .infra-badge { font-size: 0.58rem; padding: 0.15rem 0.45rem; }
+  .arch-diagram { padding: 0.8rem; font-size: 0.58rem; overflow-x: auto; }
+  .arch-box { padding: 0.2rem 0.4rem; font-size: 0.55rem; }
+  .arch-row { flex-wrap: wrap; gap: 0.3rem; }
+  .project-body { padding: 1.2rem; }
+  .project-title { font-size: 1.1rem; }
+  .project-desc { font-size: 0.82rem; }
+  .project-links { flex-wrap: wrap; gap: 0.5rem; }
+  .project-link { font-size: 0.65rem; padding: 0.3rem 0.7rem; }
+  .psr-grid { grid-template-columns: 1fr; gap: 0.4rem; }
+  .tocobo-visual { padding: 1.5rem 1rem; }
+  .mini-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .mini-card { padding: 1rem; }
+  .mini-title { font-size: 0.8rem; }
+  .mini-stack { font-size: 0.55rem; }
+  .about-grid { gap: 1.5rem; }
+  .about-text p { font-size: 0.85rem; }
+  .contact-list a { font-size: 0.72rem; padding: 0.7rem 0.9rem; gap: 0.6rem; }
+  footer { flex-direction: column; text-align: center; padding: 1.5rem 1rem; }
+  .footer-copy { font-size: 0.6rem; }
+  .section-wrap { padding: 3rem 0; }
+}
+
+@media (max-width: 400px) {
+  .hero-float, .hero-scroll, .hero-scene { display: none; }
+  .container { padding: 0 0.75rem; }
+  .section-wrap { padding: 2.5rem 0; }
+  .mini-grid { grid-template-columns: 1fr; }
+  .infra-icon { width: 36px; height: 36px; font-size: 1rem; }
+}
+</file>
+
+<file path="src/styles/global.scss">
+@use 'variables' as *;
+@use 'theme';
+@use 'sections';
+
+/* ─── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif KR', serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none; // Custom Cursor 사용
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ─── NOISE OVERLAY ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: var(--noise-opacity);
+  transition: opacity 0.4s;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ─── LAYOUT & UTILS ────────────────────────────────────────── */
+.container {
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section { 
+  position: relative; 
+  z-index: 1; 
+}
+
+.section-wrap { padding: 7rem 0; }
+.section-wrap + .section-wrap { border-top: 1px solid var(--border); }
+
+.sec-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sec-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  
+  em {
+    font-style: normal;
+    color: var(--gold);
+  }
+}
+
+.sec-note {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  max-width: 340px;
+  text-align: right;
+}
+
+/* ─── BUTTONS ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--transition);
+  cursor: none;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 700;
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--gold-glow);
+  }
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+}
+
+/* ─── SCROLL REVEAL (JS 연동) ───────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible      { opacity: 1; transform: translateY(0); }
+.reveal-delay-1      { transition-delay: 0.1s; }
+.reveal-delay-2      { transition-delay: 0.2s; }
+.reveal-delay-3      { transition-delay: 0.3s; }
+.reveal-delay-4      { transition-delay: 0.4s; }
+
+/* ─── MOBILE MEDIA QUERIES BASE ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.5rem; }
+}
+@media (max-width: 900px) {
+  .section-wrap { padding: 5rem 0; }
+  .sec-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 2.5rem; }
+  .sec-note { text-align: left; max-width: 100%; }
+}
+@media (max-width: 640px) {
+  body { cursor: auto; }
+  .container { padding: 0 1rem; }
+  .section-wrap { padding: 3.5rem 0; }
+  .sec-header   { margin-bottom: 1.8rem; }
+  .sec-note     { display: none; }
+  .sec-title    { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+}
+
+@media (min-width: 641px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+</file>
+
+<file path="index.html">
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>김재아 — Developer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet" />
+    </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "portfolio-mjb-v3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.14.1",
+    "sass": "^1.99.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "vite": "^8.0.4"
+  }
+}
+</file>
+
+<file path="src/components/Header/Header.module.scss">
+@use '../../styles/variables' as *;
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background $transition-base, border-color $transition-base;
+}
+
+.navLogo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  span { color: var(--text-dim); }
+}
+
+.navLinks {
+  display: flex; gap: 2rem; list-style: none;
+  a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color $transition-base;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width $transition-base;
+    }
+    &:hover, &.active {
+      color: var(--gold);
+      &::after { width: 100%; }
+    }
+  }
+}
+
+.navActions { display: flex; align-items: center; gap: 1rem; }
+
+.themeToggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  cursor: none;
+  transition: $transition-base;
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: rotate(20deg);
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 36px; height: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0;
+  span {
+    display: block; width: 16px; height: 1.5px;
+    background: var(--text-dim);
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+  &.open {
+    border-color: var(--gold);
+    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+}
+
+.mobileNav {
+  position: fixed; top: 0; right: 0;
+  width: min(320px, 85vw); height: 100dvh;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  z-index: 200;
+  padding: 6rem 2rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  &.open { transform: translateX(0); }
+}
+
+.mobileNavLinks {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  a {
+    display: block; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem; color: var(--text-dim); text-decoration: none;
+    padding: 1rem 1.2rem; border-radius: $radius-base;
+    border: 1px solid transparent; transition: $transition-base;
+    &:hover {
+      color: var(--gold); border-color: var(--gold-glow);
+      background: var(--gold-dim); transform: translateX(4px);
+    }
+  }
+}
+
+.mobileOverlay {
+  position: fixed; inset: 0; z-index: 190;
+  background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+  &.open { opacity: 1; pointer-events: all; }
+}
+
+@media (max-width: 900px) {
+  .navLinks { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .nav { padding: 0.8rem 1rem; }
+  .navLogo { font-size: 0.78rem; }
+  .themeToggle { width: 30px; height: 30px; font-size: 0.75rem; }
+  .hamburger { width: 30px; height: 30px; }
+  .mobileNav { padding: 5rem 1.5rem 1.5rem; width: min(280px, 85vw); }
+  .mobileNavLinks a { font-size: 0.82rem; padding: 0.85rem 1rem; }
+}
+</file>
+
+<file path="src/pages/ProjectsPage.jsx">
+import { useState } from "react";
+import ProjectDetailModal from "./ProjectDetailModal";
+
+// 5개 프로젝트 상세 데이터
+const PROJECT_DETAILS = {
+  1: {
+    id: 1,
+    title: "경기도 지역화폐 가맹점 안내 서비스",
+    subtitle: "대용량 공공 데이터 최적화 프로젝트",
+    period: "2024",
+    type: "Frontend",
+    github: "https://github.com/MJB9595/react-tailwind-mab_web",
+    demo: "http://react-tailwind-mab-web.vercel.app/",
+    stack: ["React", "Python", "Kakao Maps SDK", "Vite", "LocalStorage", "Tailwind CSS"],
+    overview:
+      "경기도 공공 API에서 제공하는 수만 건의 지역화폐 가맹점 JSON 데이터를 React 앱에서 실시간으로 시각화하는 서비스입니다. 공공 데이터 특성상 하나의 거대한 JSON 파일로 제공되어 브라우저가 멈추는 치명적인 UX 이슈를 발견하고, 이를 직접 해결했습니다.",
+    problem:
+      "수만 건의 가맹점 데이터가 담긴 단일 JSON 파일(~30MB)을 한 번에 파싱하면서 브라우저 메인 스레드가 블로킹되고 초기 렌더링이 8초 이상 지연되는 문제 발생.",
+    solution:
+      "Python 스크립트(`data_splitter.py`)를 작성해 대용량 JSON을 500개 단위 청크 파일로 분할. React 프론트엔드에서 `useEffect` + `Promise.all`로 청크를 병렬 비동기 로드한 뒤 상태에 병합. 현재 지도 뷰포트 영역의 가맹점만 렌더링하는 Lazy Rendering 패턴도 추가 적용.",
+    result:
+      "초기 렌더링 시간을 8초 → 1.2초로 단축(약 85% 개선). 즐겨찾기(LocalStorage 기반 영구 저장), 카테고리 필터, 키워드 검색 기능까지 포함한 완성도 높은 서비스 배포.",
+    codeHighlights: [
+      {
+        label: "핵심 코드 — 청크 분할 스크립트 (Python)",
+        lang: "python",
+        code: `# data_splitter.py
+import json, os
+
+def split_json(src_path, chunk_size=500):
+    with open(src_path, encoding='utf-8') as f:
+        data = json.load(f)
+    
+    total = len(data)
+    os.makedirs('chunks', exist_ok=True)
+    
+    for i, batch in enumerate(chunks(data, chunk_size)):
+        out_path = f'chunks/data_{i:03d}.json'
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(batch, f, ensure_ascii=False)
+    
+    print(f"✓ {total}건 → {i+1}개 파일로 분할 완료")
+
+def chunks(lst, n):
+    for i in range(0, len(lst), n):
+        yield lst[i:i + n]`,
+      },
+      {
+        label: "병렬 비동기 청크 로드 (React)",
+        lang: "javascript",
+        code: `// hooks/useStoreData.js
+const useStoreData = () => {
+  const [stores, setStores] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const CHUNK_COUNT = 48; // 분할된 파일 수
+    
+    const fetches = Array.from({ length: CHUNK_COUNT }, (_, i) =>
+      fetch(\`/chunks/data_\${String(i).padStart(3,'0')}.json\`)
+        .then(r => r.json())
+    );
+    
+    // 모든 청크를 병렬로 로드 후 병합
+    Promise.all(fetches)
+      .then(chunks => {
+        setStores(chunks.flat());
+        setLoading(false);
+      });
+  }, []);
+
+  return { stores, loading };
+};`,
+      },
+    ],
+    architecture: [
+      { label: "Public Data (JSON)", type: "gold" },
+      { label: "→", type: "arrow" },
+      { label: "Python Splitter", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "Chunk Files ×48", type: "blue" },
+      { label: "→", type: "arrow" },
+      { label: "React (Promise.all)", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "Kakao Maps SDK", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "성능 병목을 직접 발견하고 데이터 파이프라인 레벨에서 근본 해결",
+        "Python + JS 크로스 스택 문제 해결 능력 입증",
+        "LocalStorage 즐겨찾기로 실제 UX까지 완성",
+      ],
+      improvements: [
+        "청크 수를 하드코딩 대신 manifest 파일로 동적 관리 가능",
+        "Service Worker 캐싱 추가 시 재방문 로딩 0에 가깝게 개선 여지",
+        "지도 뷰포트 기반 virtual scroll 추가로 DOM 부하 추가 감소 가능",
+      ],
+    },
+  },
+  2: {
+    id: 2,
+    title: "백세주 브랜드 반응형 웹사이트",
+    subtitle: "Figma → Code 픽셀 퍼펙트 구현",
+    period: "2024",
+    type: "Frontend · UI/UX",
+    github: "https://github.com/MJB9595/mjb-tocobo-figma",
+    demo: "https://mjb-tocobo-figma-second.vercel.app/",
+    stack: ["React", "Vite", "SCSS (66%)", "Figma", "반응형 디자인", "Vercel"],
+    overview:
+      "브랜드 아이덴티티를 반영한 백세주 공식 웹사이트를 Figma로 직접 UI/UX를 설계하고 React + SCSS로 1:1 구현한 프로젝트. 전체 코드의 66%가 SCSS로 구성될 만큼 픽셀 단위 레이아웃 정밀도와 완벽한 반응형 처리에 집중했습니다.",
+    problem:
+      "단순한 HTML 복제가 아닌, Figma 디자인 시스템(컬러 팔레트, 타이포그래피, 컴포넌트 토큰)을 코드로 정확히 재현하면서 Mobile → Desktop 전 구간 뷰포트를 모두 대응해야 하는 도전.",
+    solution:
+      "Figma의 디자인 토큰을 SCSS 변수(`_variables.scss`)로 1:1 매핑. BEM 방법론으로 컴포넌트 단위 스타일 모듈화. CSS `clamp()`와 `min()/max()`를 활용한 유체 타이포그래피로 중간 breakpoint 없이도 자연스러운 반응형 구현.",
+    result:
+      "Vercel 배포 완료. 모바일(375px), 태블릿(768px), 데스크탑(1440px) 전 구간 픽셀 퍼펙트 달성. Figma 설계 → 실제 서비스 완성의 전체 사이클 단독 수행.",
+    codeHighlights: [
+      {
+        label: "유체 반응형 타이포그래피 (SCSS)",
+        lang: "scss",
+        code: `// _variables.scss — Figma 토큰 → SCSS 변수 1:1 매핑
+$color-primary:   #C8A96E;  // 백세주 골드
+$color-dark:      #1A0E00;
+$color-text:      #3D2B1F;
+
+$font-heading:    'NanumMyeongjo', serif;
+$font-body:       'Pretendard', sans-serif;
+
+// 유체 타이포그래피: breakpoint 없이 자연스럽게 확대
+.hero-title {
+  font-family: $font-heading;
+  font-size: clamp(2.4rem, 5vw, 4.2rem); // 모바일~데스크탑 연속 스케일
+  line-height: 1.15;
+  color: $color-primary;
+  letter-spacing: -0.02em;
+}
+
+// 반응형 Grid — CSS Grid + auto-fit
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; // 모바일: 1열
+  }
+}`,
+      },
+      {
+        label: "Figma 컴포넌트 → React 컴포넌트",
+        lang: "jsx",
+        code: `// components/ProductCard/ProductCard.jsx
+// Figma의 "Product Card" 컴포넌트를 1:1 React 컴포넌트로 구현
+
+import styles from './ProductCard.module.scss';
+
+const ProductCard = ({ name, volume, alcohol, image, description }) => {
+  return (
+    <article className={styles.card}>
+      <div className={styles.imageWrap}>
+        <img src={image} alt={name} className={styles.image} />
+        <span className={styles.badge}>{alcohol}%</span>
+      </div>
+      <div className={styles.body}>
+        <p className={styles.volume}>{volume}ml</p>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.desc}>{description}</p>
+      </div>
+    </article>
+  );
+};`,
+      },
+    ],
+    architecture: [
+      { label: "Figma Design", type: "gold" },
+      { label: "→", type: "arrow" },
+      { label: "SCSS Variables", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "React Components", type: "blue" },
+      { label: "→", type: "arrow" },
+      { label: "Vercel Deploy", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "디자인 → 코드 전환 사이클을 단독으로 완수하는 풀 사이클 역량",
+        "SCSS 변수 시스템으로 디자인 토큰 체계적 관리",
+        "clamp() 유체 타이포그래피로 매끄러운 반응형 UX 달성",
+      ],
+      improvements: [
+        "CSS Module + TypeScript 조합 적용 시 스타일 충돌 방지 강화 가능",
+        "Storybook 도입으로 컴포넌트 단위 시각 회귀 테스트 추가 고려",
+        "Lighthouse 성능 점수 측정 및 이미지 WebP 최적화 여지 있음",
+      ],
+    },
+  },
+  3: {
+    id: 3,
+    title: "UniTrade — 중고 도서 거래 플랫폼",
+    subtitle: "JSP · Docker · MariaDB 풀스택 프로젝트",
+    period: "2024",
+    type: "Fullstack · Infra",
+    github: "https://github.com/MJB9595/JSP_BookTrade",
+    demo: "https://book.mjb.diskstation.me",
+    stack: [
+      "JSP", "Java Servlet", "JDBC",
+      "MariaDB", "Docker", "Docker Compose",
+      "Apache Tomcat 9", "phpMyAdmin", "CSS",
+    ],
+    overview:
+      "중고 책 거래를 목적으로 설계한 풀스택 웹 플랫폼. 회원가입·로그인, 상품 등록·삭제, 찜 기능, 마이페이지, 1:1 채팅, 상품 페이지 댓글·대댓글까지 실제 서비스 수준의 기능을 JSP + Java Servlet으로 구현했습니다. MariaDB · Tomcat · phpMyAdmin을 Docker Compose로 오케스트레이션하고 NAS에 셀프 호스팅으로 배포·운영 중입니다.",
+    problem:
+      "단순 CRUD를 넘어 실사용 가능한 거래 플랫폼 구현이 목표였으나, JSP 환경에서 1:1 채팅·댓글 계층 구조·파일 업로드 등 복잡한 기능을 동시에 소화하면서 DB 스키마 설계와 세션 관리까지 일관성 있게 유지해야 하는 도전.",
+    solution:
+      "기능별 Servlet을 역할에 따라 분리(Auth / Product / Chat / Comment)하여 관심사를 명확히 구분. 댓글·대댓글은 parent_id 자기 참조 재귀 구조 테이블로 설계. Docker Compose로 DB · WAS · phpMyAdmin을 단일 브릿지 네트워크로 묶고, 볼륨 마운트(`./db_data`)로 데이터 영속성을 보장.",
+    result:
+      "회원·상품·찜·1:1 채팅·댓글/대댓글 전 기능 동작 완성. `docker compose up` 한 줄로 어느 환경에서도 즉시 재현 가능. Synology NAS Docker 컨테이너 24시간 무중단 운영 중.",
+    codeHighlights: [
+      {
+        label: "Docker Compose — 3컨테이너 오케스트레이션",
+        lang: "yaml",
+        code: `# compose.yaml
+version: '3.8'
+services:
+  # 1. 데이터베이스 (MariaDB 10.11)
+  db:
+    image: mariadb:10.11
+    container_name: uni_db
+    environment:
+      - MYSQL_DATABASE=ubt_library
+      - MYSQL_USER=ubt_user
+      - TZ=Asia/Seoul
+    volumes:
+      - ./db_data:/var/lib/mysql  # 볼륨으로 데이터 영속성 확보
+    networks: [uni_net]
+    restart: always
+
+  # 2. WAS (Tomcat 9 + JDK 21)
+  web:
+    image: tomcat:9.0-jdk21
+    container_name: uni_web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+    depends_on: [db]
+    networks: [uni_net]
+    restart: always
+
+  # 3. DB 관리 도구 (phpMyAdmin)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports: ["8081:80"]
+    environment:
+      - PMA_HOST=db
+    depends_on: [db]
+    networks: [uni_net]
+
+networks:
+  uni_net:
+    driver: bridge  # 3컨테이너 단일 격리 네트워크`,
+      },
+      {
+        label: "댓글 · 대댓글 재귀 구조 (Java Servlet)",
+        lang: "java",
+        code: `// CommentServlet.java — parent_id 자기 참조 트리 구조
+@WebServlet("/comment")
+public class CommentServlet extends HttpServlet {
+
+    // 댓글 등록 (parent_id=null: 댓글 / parent_id=N: 대댓글)
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse res) throws ... {
+        int productId  = Integer.parseInt(req.getParameter("product_id"));
+        String content = req.getParameter("content");
+        String parentIdStr = req.getParameter("parent_id");
+
+        Integer parentId = (parentIdStr != null && !parentIdStr.isEmpty())
+            ? Integer.parseInt(parentIdStr)
+            : null;   // null → 최상위 댓글
+
+        try (Connection conn = DBUtil.getConnection()) {
+            String sql = "INSERT INTO comment " +
+                "(product_id, user_id, content, parent_id, created_at) " +
+                "VALUES (?, ?, ?, ?, NOW())";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, productId);
+            ps.setInt(2, getSessionUserId(req));
+            ps.setString(3, content);
+            if (parentId != null) ps.setInt(4, parentId);
+            else                  ps.setNull(4, Types.INTEGER);
+            ps.executeUpdate();
+        }
+        res.sendRedirect("/product?id=" + productId);
+    }
+
+    // 댓글 목록: COALESCE 정렬로 부모 아래 대댓글 배치
+    public List<Comment> getCommentTree(int productId, Connection conn) {
+        String sql = "SELECT c.*, u.nickname FROM comment c " +
+                     "JOIN users u ON c.user_id = u.id " +
+                     "WHERE c.product_id = ? " +
+                     "ORDER BY COALESCE(c.parent_id, c.id), c.id";
+        ...
+    }
+}`,
+      },
+      {
+        label: "찜(Wishlist) 토글 — JSON 응답 Servlet",
+        lang: "java",
+        code: `// WishServlet.java — 찜 추가 / 제거 토글
+@WebServlet("/wish")
+public class WishServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest req,
+                          HttpServletResponse res) throws ... {
+        int productId = Integer.parseInt(req.getParameter("product_id"));
+        int userId    = getSessionUserId(req);
+        res.setContentType("application/json;charset=UTF-8");
+
+        try (Connection conn = DBUtil.getConnection()) {
+            String check = "SELECT id FROM wishlist " +
+                           "WHERE user_id=? AND product_id=?";
+            PreparedStatement ps = conn.prepareStatement(check);
+            ps.setInt(1, userId); ps.setInt(2, productId);
+            ResultSet rs = ps.executeQuery();
+
+            String action;
+            if (rs.next()) {
+                // 이미 찜 → 제거
+                PreparedStatement del = conn.prepareStatement(
+                    "DELETE FROM wishlist WHERE user_id=? AND product_id=?");
+                del.setInt(1, userId); del.setInt(2, productId);
+                del.executeUpdate();
+                action = "removed";
+            } else {
+                // 미찜 → 추가
+                PreparedStatement ins = conn.prepareStatement(
+                    "INSERT INTO wishlist (user_id, product_id) VALUES (?,?)");
+                ins.setInt(1, userId); ins.setInt(2, productId);
+                ins.executeUpdate();
+                action = "added";
+            }
+            // JSON 응답으로 프론트 버튼 상태 동적 업데이트
+            res.getWriter().write("{\"action\":\"" + action + "\"}");
+        }
+    }
+}`,
+      },
+    ],
+    architecture: [
+      { label: "Browser (JSP)", type: "gold" },
+      { label: "→", type: "arrow" },
+      { label: "Tomcat 9 · JDK 21", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "MariaDB", type: "blue" },
+      { label: "↑ Docker Compose", type: "arrow" },
+      { label: "NAS Self-Host", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "찜·채팅·댓글/대댓글 등 실거래 플랫폼 수준의 다양한 기능을 JSP 단일 스택으로 완성",
+        "Docker Compose 3컨테이너 오케스트레이션으로 환경 재현성과 데이터 영속성 동시 확보",
+        "parent_id 재귀 테이블 설계로 댓글 계층 구조를 DB 레벨에서 명확하게 처리",
+        "NAS Docker 배포로 인프라 전 과정을 단독 설계·운영하는 역량 입증",
+      ],
+      improvements: [
+        "HTTP Polling 방식 채팅을 WebSocket(STOMP)으로 교체 시 실시간성 대폭 향상 가능",
+        "Session 인증을 JWT + Refresh Token으로 전환하면 Stateless 확장성 확보",
+        "이미지 저장을 Object Storage(S3 호환)로 이전 시 서버 부하 분산 가능",
+        "Flyway·Liquibase 도입으로 DB 스키마 버전 관리 체계화 가능",
+      ],
+    },
+  },
+  4: {
+    id: 4,
+    title: "VAIONITY — Spring & React 풀스택",
+    subtitle: "완전 분리 아키텍처 RESTful 관리 시스템",
+    period: "2024",
+    type: "Fullstack",
+    github: "https://github.com/MJB9595/Vaionity-project",
+    demo: "https://vaionity.mjb.diskstation.me/",
+    stack: ["Spring Boot", "React", "MySQL", "RESTful API", "Context API", "JWT", "Synology NAS"],
+    overview:
+      "프론트엔드(React)와 백엔드(Spring Boot)를 완전히 분리한 아키텍처로 설계한 RESTful 관리 시스템. JWT 기반 인증과 Context API를 활용한 전역 상태 관리를 구현하고, 직접 운영 중인 Synology NAS에 셀프 호스팅으로 배포한 풀스택 프로젝트입니다.",
+    problem:
+      "전통적인 JSP 방식의 서버 렌더링 패턴에서 벗어나, 프론트와 백을 완전히 분리하여 독립적으로 개발·배포·확장할 수 있는 현대적 아키텍처 구축이 목표.",
+    solution:
+      "Spring Boot로 RESTful API 서버를 구축하고 React SPA가 이를 소비하는 구조. JWT를 이용한 Stateless 인증으로 세션 서버 의존성을 제거. Context API + useReducer 패턴으로 전역 상태(인증 상태, 사용자 정보)를 컴포넌트 외부에서 일관되게 관리.",
+    result:
+      "프론트/백 완전 독립 배포 달성. Synology NAS의 Docker 컨테이너로 24시간 무중단 서비스 운영. JWT refresh token 로직으로 보안성과 UX를 동시에 확보.",
+    codeHighlights: [
+      {
+        label: "JWT 인증 필터 (Spring Boot)",
+        lang: "java",
+        code: `// security/JwtAuthFilter.java
+@Component
+public class JwtAuthFilter extends OncePerRequestFilter {
+
+    private final JwtUtil jwtUtil;
+    private final UserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(
+        HttpServletRequest req, HttpServletResponse res, 
+        FilterChain chain) throws IOException, ServletException {
+        
+        String authHeader = req.getHeader("Authorization");
+        
+        // Bearer 토큰 추출 및 검증
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            String username = jwtUtil.extractUsername(token);
+            
+            if (username != null && SecurityContextHolder
+                    .getContext().getAuthentication() == null) {
+                
+                UserDetails user = userDetailsService
+                    .loadUserByUsername(username);
+                
+                if (jwtUtil.validateToken(token, user)) {
+                    // 검증 성공 → SecurityContext에 인증 정보 주입
+                    UsernamePasswordAuthenticationToken authToken =
+                        new UsernamePasswordAuthenticationToken(
+                            user, null, user.getAuthorities());
+                    SecurityContextHolder.getContext()
+                        .setAuthentication(authToken);
+                }
+            }
+        }
+        chain.doFilter(req, res);
+    }
+}`,
+      },
+      {
+        label: "전역 인증 상태 관리 (Context API)",
+        lang: "jsx",
+        code: `// context/AuthContext.jsx
+const AuthContext = createContext(null);
+
+export const AuthProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(authReducer, {
+    user: null,
+    token: localStorage.getItem('token'),
+    isAuthenticated: false,
+  });
+
+  // 로그인 → JWT 저장 → 전역 상태 업데이트
+  const login = async (credentials) => {
+    const { data } = await api.post('/auth/login', credentials);
+    localStorage.setItem('token', data.token);
+    dispatch({ type: 'LOGIN_SUCCESS', payload: data });
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    dispatch({ type: 'LOGOUT' });
+  };
+
+  return (
+    <AuthContext.Provider value={{ ...state, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+// 어디서든 인증 상태 접근
+export const useAuth = () => useContext(AuthContext);`,
+      },
+    ],
+    architecture: [
+      { label: "React SPA", type: "gold" },
+      { label: "⇌ REST API", type: "arrow" },
+      { label: "Spring Boot", type: "normal" },
+      { label: "→", type: "arrow" },
+      { label: "MySQL", type: "blue" },
+      { label: "↑ Docker", type: "arrow" },
+      { label: "NAS Self-Host", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "프론트/백 완전 분리로 독립적 개발·배포 사이클 구현",
+        "JWT Stateless 인증으로 서버 확장성(Scale-out) 확보",
+        "직접 NAS에 Docker 배포하며 인프라까지 단독 운영",
+      ],
+      improvements: [
+        "Refresh Token을 HttpOnly Cookie로 이동 시 XSS 방어 강화",
+        "API 에러 핸들링을 Axios Interceptor로 중앙화 가능",
+        "Spring Security CORS 설정을 환경변수화하여 운영/개발 분리 필요",
+      ],
+    },
+  },
+  5: {
+    id: 5,
+    title: "LocaPick — 위치기반 장소 추천 알고리즘",
+    subtitle: "3개 지도 API 하이브리드 아키텍처",
+    period: "2024",
+    type: "Fullstack · Algorithm",
+    github: "https://github.com/MJB9595/LocaPick",
+    demo: "https://locapick.mjb.diskstation.me",
+    stack: [
+      "React", "SCSS", "Spring Boot", "MySQL",
+      "Kakao Maps SDK", "ODsay 대중교통 API", "Tmap 보행자 API",
+      "JWT", "Synology NAS", "Vite",
+    ],
+    overview:
+      "현재 위치에서 시간(도보/교통 기준)과 카테고리를 입력하면 최적의 장소를 추천하는 서비스. Kakao, Tmap, ODsay 3개의 지도 API를 하이브리드로 통합하고, 리뷰 점수·사용자 평점·거리를 종합하는 자체 'LocaPick 추천 알고리즘'을 구현했습니다.",
+    problem:
+      "단일 지도 API로는 보행자 경로(Tmap), 대중교통 경로(ODsay), 장소 검색(Kakao)을 동시에 만족할 수 없었음. 또한 단순 거리순 정렬은 실제 사용자가 원하는 '좋은 장소'를 추천하지 못하는 한계.",
+    solution:
+      "백엔드에서 3개 API를 조율하는 하이브리드 레이어 구축. `getRecommendations()` 메서드가 도보 시간 → 반경 계산(time×80/1.3m) → Kakao 검색 → 결과를 리뷰수·평점·거리 가중 정렬하는 파이프라인 구현. JWT Stateless 인증으로 사용자별 즐겨찾기 및 리뷰 저장.",
+    result:
+      "3-API 통합 단일 인터페이스 완성. 자체 추천 알고리즘으로 단순 거리순 대비 사용자 만족도 향상. NAS Docker 배포로 24시간 무중단 서비스 운영 중.",
+    codeHighlights: [
+      {
+        label: "핵심 추천 알고리즘 (Spring Boot)",
+        lang: "java",
+        code: `// service/RecommendService.java
+public List<LocapickResponseDto> getRecommendations(
+    double lat, double lng, 
+    int time, int count, String category) {
+    
+    // 1. 도보 시간 → 검색 반경 계산 (평균 보행속도 기반)
+    int radius = (int) Math.round((time * 80) / 1.3);
+    
+    // 2. Kakao Local API로 근처 장소 검색
+    String url = String.format(
+        "https://dapi.kakao.com/v2/local/search/category.json" +
+        "?x=%s&y=%s&radius=%d&category_group_code=%s",
+        lng, lat, radius, category);
+    
+    HttpHeaders headers = new HttpHeaders();
+    headers.set("Authorization", "KakaoAK " + kakaoRestKey);
+    
+    ResponseEntity<Map> response = restTemplate.exchange(
+        url, HttpMethod.GET,
+        new HttpEntity<>(headers), Map.class);
+    
+    List<Map> places = (List) 
+        ((Map) response.getBody()).get("documents");
+    
+    // 3. LocaPick 점수 계산: 리뷰수×0.4 + 평점×0.4 + 거리역수×0.2
+    return places.stream()
+        .map(this::toDto)
+        .sorted(Comparator.comparingDouble(
+            dto -> -calcScore(dto)))
+        .limit(count)
+        .collect(Collectors.toList());
+}
+
+private double calcScore(LocapickResponseDto dto) {
+    double reviewNorm  = Math.log1p(dto.getReviewCount()) / 10.0;
+    double ratingNorm  = dto.getRating() / 5.0;
+    double distNorm    = 1.0 / (1.0 + dto.getDistance() / 100.0);
+    return reviewNorm * 0.4 + ratingNorm * 0.4 + distNorm * 0.2;
+}`,
+      },
+      {
+        label: "3-API 통합 훅 (React)",
+        lang: "jsx",
+        code: `// hooks/useLocaPick.js
+export const useLocaPick = () => {
+  const [places, setPlaces] = useState([]);
+  const [route, setRoute]   = useState(null);
+
+  // 장소 추천 + 경로 조회를 병렬 실행
+  const search = async ({ lat, lng, time, category, mode }) => {
+    const [recommended, pathData] = await Promise.all([
+      // ① 백엔드 추천 알고리즘 호출
+      api.get('/api/recommend', { params: { lat, lng, time, category } }),
+      // ② 이동 수단에 따라 API 분기
+      mode === 'transit'
+        ? fetchOdsayRoute(lat, lng)   // 대중교통: ODsay
+        : fetchTmapRoute(lat, lng),   // 도보:    Tmap
+    ]);
+
+    setPlaces(recommended.data);
+    setRoute(pathData);
+  };
+
+  return { places, route, search };
+};`,
+      },
+    ],
+    architecture: [
+      { label: "React + Kakao SDK", type: "gold" },
+      { label: "⇌", type: "arrow" },
+      { label: "Spring Boot", type: "normal" },
+      { label: "→ Kakao API", type: "arrow" },
+      { label: "→ Tmap API", type: "arrow" },
+      { label: "→ ODsay API", type: "blue" },
+    ],
+    review: {
+      strengths: [
+        "3개 외부 API를 단일 백엔드 레이어에서 오케스트레이션하는 설계",
+        "가중 점수 알고리즘으로 단순 정렬 대비 추천 품질 향상",
+        "프론트-백-인프라 전 계층을 단독으로 설계·구현·운영",
+      ],
+      improvements: [
+        "추천 점수 가중치를 사용자 피드백 데이터로 ML 학습 가능",
+        "외부 API 실패 시 Fallback 전략(Circuit Breaker 패턴) 추가 필요",
+        "Redis 캐싱으로 동일 좌표 반복 요청 시 API 호출 비용 절감 가능",
+      ],
+    },
+  },
+};
+
+const ProjectsPage = () => {
+  const [activeModal, setActiveModal] = useState(null);
+
+  const openModal = (id) => setActiveModal(PROJECT_DETAILS[id]);
+  const closeModal = () => setActiveModal(null);
+
+  return (
+    <>
+      <section id="projects" className="section-wrap">
+        <div className="container">
+          <div className="sec-header reveal">
+            <div>
+              <p className="sec-label">03 — Featured Projects</p>
+              <h2 className="sec-title">
+                만든 것들로
+                <br />
+                <em>말합니다</em>
+              </h2>
+            </div>
+            <p className="sec-note">
+              문제 정의 → 기술적 해결 →<br />실제 결과로 정리한 프로젝트들입니다.
+            </p>
+          </div>
+
+          <div className="project-grid">
+            {/* ── PROJECT 01 ── */}
+            <div className="project-card featured reveal">
+              <div className="project-visual">
+                <div className="visual-badge">★ Featured</div>
+                <div className="project-visual-inner">
+                  <div className="code-line-img">
+                    <img src="/simplemap.png" alt="배경 이미지" className="banner" />
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">01</span>
+                    <span className="code-comment"># data_splitter.py</span>
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">02</span>
+                    <span className="code-kw">import</span>{" "}
+                    <span className="code-fn">json</span>,{" "}
+                    <span className="code-fn">os</span>
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">03</span>
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">04</span>
+                    <span className="code-kw">def</span>{" "}
+                    <span className="code-fn">split_json</span>(src, chunk=500):
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">05</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">with</span>{" "}
+                    <span className="code-fn">open</span>(src){" "}
+                    <span className="code-kw">as</span> f:
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">06</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data ={" "}
+                    <span className="code-fn">json.load</span>(f)
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">07</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">for</span> i, batch{" "}
+                    <span className="code-kw">in</span>{" "}
+                    <span className="code-fn">enumerate</span>(
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">08</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chunks(data,
+                    chunk)):
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">09</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-fn">save_chunk</span>(i, batch)
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">10</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-comment">
+                      # → 브라우저 로딩 최적화 ✓
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="project-body">
+                <div className="project-tags">
+                  <span className="project-tag">React</span>
+                  <span className="project-tag">Python</span>
+                  <span className="project-tag">Kakao Maps API</span>
+                  <span className="project-tag">Vite</span>
+                  <span className="project-tag">LocalStorage</span>
+                </div>
+                <p className="project-num">Project 01</p>
+                <h3 className="project-title">
+                  경기도 지역화폐
+                  <br />
+                  가맹점 안내 서비스
+                </h3>
+                <p className="project-desc">
+                  공공 API의 대용량 JSON 데이터를 React로 렌더링할 때 발생하는
+                  브라우저 성능 저하 문제를 직접 해결한 프로젝트.
+                </p>
+                <div className="psr-grid">
+                  <div className="psr-card">
+                    <p className="psr-label">🔴 Problem</p>
+                    <p className="psr-text">
+                      공공기관 JSON 파일이 너무 커서 브라우저가 멈추는 UX 이슈
+                      발생
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🔵 Solution</p>
+                    <p className="psr-text">
+                      Python 스크립트로 데이터를 청크 분할, 프론트에서 비동기
+                      병합 로드 구현
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🟢 Result</p>
+                    <p className="psr-text">
+                      초기 로딩 속도 개선 + 즐겨찾기(LocalStorage) 기능까지
+                      포함한 완성도
+                    </p>
+                  </div>
+                </div>
+                <div className="project-links">
+                  <a
+                    href="https://github.com/MJB9595/react-tailwind-mab_web"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-brands fa-github"></i> GitHub
+                  </a>
+                  <a
+                    href="http://react-tailwind-mab-web.vercel.app/"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                    Live Demo
+                  </a>
+                  <button
+                    className="project-link project-detail-btn"
+                    onClick={() => openModal(1)}
+                  >
+                    <i className="fa-solid fa-magnifying-glass-chart"></i> 상세
+                    보기
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* ── PROJECT 02 ── */}
+            <div className="project-card featured featured-flip reveal">
+              <div className="project-body">
+                <div className="project-tags">
+                  <span className="project-tag">React</span>
+                  <span className="project-tag">Vite</span>
+                  <span className="project-tag">SCSS</span>
+                  <span className="project-tag">반응형 디자인</span>
+                  <span className="project-tag">Figma</span>
+                </div>
+                <p className="project-num">Project 02</p>
+                <h3 className="project-title">
+                  백세주 브랜드
+                  <br />
+                  반응형 웹사이트
+                </h3>
+                <p className="project-desc">
+                  Figma로 직접 설계하고 코드로 구현한 브랜드 반응형 웹사이트.
+                  전체 코드의 66%가 SCSS인 만큼 픽셀 단위 레이아웃 정밀도와
+                  모든 뷰포트 대응에 집중했습니다.
+                </p>
+                <div className="psr-grid">
+                  <div className="psr-card">
+                    <p className="psr-label">🎨 Design</p>
+                    <p className="psr-text">
+                      Figma로 UI/UX 직접 설계 후 React + SCSS로 1:1 구현
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">📐 Responsive</p>
+                    <p className="psr-text">
+                      모바일·태블릿·데스크탑 전 구간 완벽 반응형 처리
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🚀 Deploy</p>
+                    <p className="psr-text">
+                      Vercel 배포 · 실서비스 수준의 완성도 확보
+                    </p>
+                  </div>
+                </div>
+                <div className="project-links">
+                  <a
+                    href="https://github.com/MJB9595/mjb-tocobo-figma"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-brands fa-github"></i> GitHub
+                  </a>
+                  <a
+                    href="https://mjb-tocobo-figma-second.vercel.app/"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                    Live Demo
+                  </a>
+                  <button
+                    className="project-link project-detail-btn"
+                    onClick={() => openModal(2)}
+                  >
+                    <i className="fa-solid fa-magnifying-glass-chart"></i> 상세
+                    보기
+                  </button>
+                </div>
+              </div>
+              <div className="project-visual tocobo-visual">
+                <div className="visual-badge">Figma → Code</div>
+                <div className="tocobo-mockup">
+                  <div className="mock-desktop">
+                    <div className="mock-bar"></div>
+                    <div className="mock-screen screen-desktop"></div>
+                  </div>
+                  <div className="mock-devices">
+                    <div className="mock-tablet">
+                      <div className="mock-bar"></div>
+                      <div
+                        className="mock-screen screen-tablet"
+                        style={{ height: "72px" }}
+                      ></div>
+                    </div>
+                    <div className="mock-mobile">
+                      <div className="mock-notch"></div>
+                      <div
+                        className="mock-screen screen-mobile"
+                        style={{ height: "82px" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <p className="mock-label">Desktop · Tablet · Mobile</p>
+                </div>
+              </div>
+            </div>
+
+            {/* ── PROJECT 03 & 04 Row ── */}
+            <div className="project-row">
+              {/* PROJECT 03 */}
+              <div className="project-card reveal reveal-delay-1">
+                <div className="project-visual">
+                  <div className="project-visual-inner">
+                    <div
+                      className="arch-diagram"
+                      style={{ fontSize: "0.64rem", padding: "1rem" }}
+                    >
+                      <div className="arch-row">
+                        <span className="arch-box gold">Client (Browser)</span>
+                        <span className="arch-arrow">────▶</span>
+                        <span className="arch-box">Tomcat (JSP)</span>
+                      </div>
+                      <div
+                        className="arch-row"
+                        style={{ paddingLeft: "2rem" }}
+                      >
+                        <span className="arch-arrow">│</span>
+                      </div>
+                      <div className="arch-row">
+                        <span className="arch-box blue">Docker Network</span>
+                        <span className="arch-arrow">──▶</span>
+                        <span className="arch-box">MariaDB</span>
+                        <span
+                          style={{
+                            fontSize: "0.6rem",
+                            color: "var(--text-faint)",
+                          }}
+                        >
+                          + Volume
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="project-body">
+                  <div className="project-tags">
+                    <span className="project-tag">JSP</span>
+                    <span className="project-tag">Docker</span>
+                    <span className="project-tag">MariaDB</span>
+                  </div>
+                  <p className="project-num">Project 03</p>
+                  <h3 className="project-title">
+                    Docker 기반
+                    <br />
+                    중고 도서 거래 플랫폼
+                  </h3>
+                  <p className="project-desc">
+                    단순 CRUD를 넘어 Docker 볼륨 설정으로 데이터 무결성을
+                    확보하고, 1:1 채팅·사진 편집 기능까지 구현한 풀스택
+                    프로젝트.
+                  </p>
+                  <div className="project-links">
+                    <a
+                      href="https://github.com/MJB9595/JSP_BookTrade"
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a
+                      href="https://book.mjb.diskstation.me"
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                      Live Demo
+                    </a>
+                    <button
+                      className="project-link project-detail-btn"
+                      onClick={() => openModal(3)}
+                    >
+                      <i className="fa-solid fa-magnifying-glass-chart"></i>{" "}
+                      상세 보기
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* PROJECT 04 */}
+              <div className="project-card reveal reveal-delay-2">
+                <div className="project-visual">
+                  <div className="project-visual-inner">
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "0.5rem",
+                        flexWrap: "wrap",
+                        padding: "1.2rem",
+                      }}
+                    >
+                      <div
+                        className="arch-box gold"
+                        style={{ fontSize: "0.65rem" }}
+                      >
+                        React
+                      </div>
+                      <span className="arch-arrow">⇌</span>
+                      <div
+                        className="arch-box blue"
+                        style={{ fontSize: "0.65rem" }}
+                      >
+                        Spring Boot
+                      </div>
+                      <br />
+                      <div
+                        style={{
+                          width: "100%",
+                          marginTop: "0.5rem",
+                          fontSize: "0.64rem",
+                          color: "var(--text-faint)",
+                        }}
+                      >
+                        RESTful API · MySQL · Context API
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="project-body">
+                  <div className="project-tags">
+                    <span className="project-tag">Spring Boot</span>
+                    <span className="project-tag">React</span>
+                    <span className="project-tag">MySQL</span>
+                  </div>
+                  <p className="project-num">Project 04</p>
+                  <h3 className="project-title">
+                    Spring & React
+                    <br />
+                    VAIONITY
+                  </h3>
+                  <p className="project-desc">
+                    프론트/백엔드 완전 분리 아키텍처로 설계한 RESTful 관리
+                    시스템. Context API를 활용한 전역 상태 관리.
+                  </p>
+                  <div className="project-links">
+                    <a
+                      href="https://github.com/MJB9595/Vaionity-project"
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a
+                      href="https://vaionity.mjb.diskstation.me/"
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                      Live Demo
+                    </a>
+                    <button
+                      className="project-link project-detail-btn"
+                      onClick={() => openModal(4)}
+                    >
+                      <i className="fa-solid fa-magnifying-glass-chart"></i>{" "}
+                      상세 보기
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── PROJECT 05 ── */}
+            <div className="project-card featured reveal">
+              <div className="project-visual">
+                <div className="visual-badge">★ Featured</div>
+                <div className="project-visual-inner">
+                  <div className="code-line-img">
+                    <img
+                      src="/locapickimg.png"
+                      alt="배경 이미지"
+                      className="banner"
+                    />
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">01</span>
+                    <span className="code-kw">public List</span>
+                    &lt;LocapickResponseDto&gt;{" "}
+                    <span className="code-fn">getRecommendations</span>
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">02</span>(
+                    <span className="code-kw">double</span> lat,{" "}
+                    <span className="code-kw">double</span> lng,{" "}
+                    <span className="code-kw">int</span> time,{" "}
+                    <span className="code-kw">int</span> count,{" "}
+                    <span className="code-kw">String</span> category) {"{"}
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">03</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">int</span> radius = (
+                    <span className="code-kw">int</span>) Math.
+                    <span className="code-fn">round</span>((time * 80) / 1.3);
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">04</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">String</span> url ={" "}
+                    <span className="code-kw">String</span>.
+                    <span className="code-fn">format</span>(
+                    "https://dapi.kakao.com/...", lng, lat, radius);
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">05</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;HttpHeaders headers ={" "}
+                    <span className="code-kw">new</span>{" "}
+                    <span className="code-fn">HttpHeaders</span>();
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">06</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;headers.
+                    <span className="code-fn">set</span>("Authorization",
+                    "KakaoAK " + kakaoRestKey);
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">07</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">return</span> restTemplate.
+                    <span className="code-fn">exchange</span>(url,
+                    HttpMethod.GET,{" "}
+                    <span className="code-kw">new</span>{" "}
+                    <span className="code-fn">HttpEntity</span>&lt;&gt;(headers),
+                    Map.class)
+                  </div>
+                </div>
+              </div>
+              <div className="project-body">
+                <div className="project-tags">
+                  <span className="project-tag">React</span>
+                  <span className="project-tag">SCSS</span>
+                  <span className="project-tag">Spring</span>
+                  <span className="project-tag">
+                    Synology NAS (Self-Hosting)
+                  </span>
+                  <span className="project-tag">Kakao Maps SDK</span>
+                  <span className="project-tag">ODsay Public Transit</span>
+                  <span className="project-tag">Tmap Pedestrian</span>
+                  <span className="project-tag">Vite</span>
+                  <span className="project-tag">MySQL</span>
+                </div>
+                <p className="project-num">Project 05</p>
+                <h3 className="project-title">
+                  LocaPick
+                  <br />
+                  위치기반 내비게이션 & 장소 추천 알고리즘
+                </h3>
+                <p className="project-desc">
+                  3개의 API(Kakao, Tmap, ODsay)를 하나의 인터페이스에서
+                  통합하고,
+                  <br />
+                  JWT를 활용한 Stateless 인증 시스템을 구축하여 보안성을
+                  확보하고,
+                  <br />
+                  다차원 정렬(리뷰 점수, 사용자 평점 등)을 통해 최적의 장소를
+                  추천하는 <br /> 'LocaPick 알고리즘'을 구현
+                </p>
+                <div className="psr-grid">
+                  <div className="psr-card">
+                    <p className="psr-label">🔴 Problem</p>
+                    <p className="psr-text">
+                      초기에 정적 데이터 (JSON) 방식에서 발생하던 데이터의
+                      한계와 연산 부하 문제를 인식
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🔵 Solution</p>
+                    <p className="psr-text">
+                      카카오 API와 백엔드 연산 로직을 결합한 하이브리드
+                      아키텍처로 고도화
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🟢 Result</p>
+                    <p className="psr-text">
+                      빠른 로딩시간과 가볍고 성능좋은 웹사이트면서 동시에 장소
+                      추천 알고리즘 구현에 성공
+                    </p>
+                  </div>
+                </div>
+                <div className="project-links">
+                  <a
+                    href="https://github.com/MJB9595/LocaPick.git"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-brands fa-github"></i> GitHub
+                  </a>
+                  <a
+                    href="https://locapick.mjb.diskstation.me"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                    Live Demo
+                  </a>
+                  <button
+                    className="project-link project-detail-btn"
+                    onClick={() => openModal(5)}
+                  >
+                    <i className="fa-solid fa-magnifying-glass-chart"></i> 상세
+                    보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 상세 모달 */}
+      {activeModal && (
+        <ProjectDetailModal project={activeModal} onClose={closeModal} />
+      )}
+    </>
+  );
+};
+
+export default ProjectsPage;
+</file>
+
+<file path="README.md">
+# 김재아(Kim Jae-ah) - Developer Portfolio
+
+> **"코드 너머의 운영 경험까지. builds things that last."** <br/>
+> 인프라부터 프론트엔드까지 — 데이터 파이프라인을 직접 설계하고, Docker로 서버를 구축하며, React로 사용자 경험을 완성하는 풀스택 개발자의 포트폴리오 웹사이트입니다.
+
+<br/>
+
+
+## Key Features
+- **다크/라이트 테마 (Context API)**: 사용자의 시스템 설정 또는 토글 버튼을 통해 부드럽게 전환되는 테마 환경 구현
+- **Custom Cursor & Interactive UI**: 마우스 움직임을 부드럽게 추적하는 커스텀 커서 및 호버 애니메이션 적용 (`requestAnimationFrame` 활용)
+- **Scroll Reveal Animation**: `IntersectionObserver`를 활용하여 스크롤 시 컨텐츠가 자연스럽게 나타나는 동적 효과 구현
+- **Responsive Web Design**: 모바일, 태블릿, 데스크탑 등 모든 뷰포트에 대응하는 완벽한 반응형 레이아웃 (SCSS)
+- **모듈화된 아키텍처**: 기능 및 페이지별로 React 컴포넌트를 분리하고 SCSS를 모듈화하여 유지보수성 극대화
+
+<br/>
+
+## 🛠 Tech Stack
+
+### Frontend
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+<br/>
+
+## Featured Projects
+
+| 프로젝트명 | 핵심 기술 | 요약 | 링크 |
+| --- | --- | --- | --- |
+| **경기도 지역화폐 가맹점 안내** | React, Python, Vite | 대용량 JSON 데이터 청크 분할을 통한 브라우저 로딩 최적화 구현 | [GitHub](https://github.com/MJB9595/react-tailwind-mab_web) |
+| **백세주 반응형 웹사이트** | React, SCSS, Figma | Figma 설계 기반 픽셀 단위 레이아웃 및 데스크탑/모바일 완벽 반응형 구현 | [GitHub](https://github.com/MJB9595/mjb-tocobo-figma) |
+| **중고 도서 거래 플랫폼** | JSP, Docker, MariaDB | Docker 기반 아키텍처 및 볼륨 설정을 통한 데이터 무결성 확보 | - |
+| **VAIONITY** | Spring Boot, React | 프론트/백엔드 완전 분리 아키텍처 및 Context API 활용 전역 상태 관리 | [GitHub](https://github.com/MJB9595/Fullstack-project) |
+| **LocaPick 장소 추천 알고리즘** | Spring, React, 다중 API | 3개의 지도 API 하이브리드 아키텍처 및 JWT 기반 다차원 정렬 추천 서비스 | [GitHub](https://github.com/MJB9595/LocaPick.git) |
+
+<br/>
+
+## Infrastructure 운영 경험
+단순히 코드를 작성하는 것을 넘어, 서비스를 직접 배포하고 유지하는 **인프라 환경(Self-Hosting)**을 운영합니다.
+- **NAS 홈 서버 구축**: Synology 및 UGREEN NAS 동시 운영, SMB 멀티채널 및 포트 포워딩을 통한 안정적인 접속 환경 구성
+- **Docker 기반 컨테이너 관리**: Immich(개인 사진 클라우드), Minecraft 서버 등 다양한 서비스를 컨테이너 기반으로 24시간 무중단 운영 중
+</file>
+
+</files>

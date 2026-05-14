@@ -284,6 +284,10 @@ body.hovering #cursor-ring {
 /* ─── 6. MINI PROJECTS ──────────────────────────────────────── */
 .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
 .mini-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  
   background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; transition: border-color var(--transition), transform var(--transition), background var(--transition); cursor: none;
   &:hover { border-color: var(--gold-glow); transform: translateY(-3px); background: var(--surface); }
   
@@ -393,3 +397,4 @@ footer { border-top: 1px solid var(--border); padding: 2rem; display: flex; just
   .mini-grid { grid-template-columns: 1fr; }
   .infra-icon { width: 36px; height: 36px; font-size: 1rem; }
 }
+

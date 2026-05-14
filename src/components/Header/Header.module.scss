@@ -55,10 +55,19 @@
   font-size: 0.85rem;
   cursor: none;
   transition: $transition-base;
-  &:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    transform: rotate(20deg);
+  
+  /* 마우스가 있는 환경(데스크탑 등)에서만 호버 효과 적용 */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: rotate(20deg);
+    }
+  }
+
+  /* 모바일(터치) 환경을 위한 터치 액티브 효과 (선택 사항) */
+  &:active {
+    transform: scale(0.92);
   }
 }
 

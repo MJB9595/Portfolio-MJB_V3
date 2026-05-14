@@ -10,41 +10,47 @@ const MiniProjects = () => {
         </div>
 
         <div className="mini-grid">
-          <div className="mini-card reveal">
+          <a href="https://github.com/MJB9595/timer-app" target="_blank" rel="noreferrer" className="mini-card reveal">
             <div className="mini-icon">⏱️</div>
             <p className="mini-title">타이머 앱</p>
             <p className="mini-stack">React · useState</p>
-          </div>
-          <div className="mini-card reveal reveal-delay-1">
+          </a>
+          
+          <a href="https://github.com/MJB9595/react-openwetherAPI" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-1">
             <div className="mini-icon">⛅</div>
             <p className="mini-title">날씨 알림</p>
             <p className="mini-stack">React · OpenWeather API</p>
-          </div>
-          <div className="mini-card reveal reveal-delay-2">
+          </a>
+          
+          <a href="https://github.com/MJB9595/React-Todo-List" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-2">
             <div className="mini-icon">✅</div>
             <p className="mini-title">TodoList</p>
             <p className="mini-stack">React · Context API</p>
-          </div>
-          <div className="mini-card reveal reveal-delay-3">
+          </a>
+          
+          <a href="https://github.com/MJB9595/end-word-game" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-3">
             <div className="mini-icon">💬</div>
             <p className="mini-title">끝말잇기 게임</p>
             <p className="mini-stack">JavaScript · DOM</p>
-          </div>
-          <div className="mini-card reveal reveal-delay-2">
+          </a>
+          
+          <a href="https://github.com/MJB9595/JSP_BookTrade" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-2">
             <div className="mini-icon">📚</div>
             <p className="mini-title">UniTrade</p>
             <p className="mini-stack">JSP · MariaDB</p>
-          </div>
-          <div className="mini-card reveal reveal-delay-4">
+          </a>
+          
+          <a href="https://github.com/MJB9595/LocaPick" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-4">
             <div className="mini-icon">🗺️</div>
             <p className="mini-title">LocaPick</p>
             <p className="mini-stack">MultiPle API · Spring Backend</p>
-          </div>
-          <div className="mini-card reveal">
+          </a>
+          
+          <a href="https://www.figma.com/file/XwotLsaw8riNRvAUXjxIdw?node-id=569-5&p=f&t=FCOeaGM6INU8ndZZ-0&type=design&mode=design&fuid=1564202928376138181" target="_blank" rel="noreferrer" className="mini-card reveal">
             <div className="mini-icon">🎨</div>
             <p className="mini-title">Figma UI 작업</p>
             <p className="mini-stack">Figma · UI/UX</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>

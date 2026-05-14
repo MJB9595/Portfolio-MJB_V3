@@ -8,12 +8,12 @@ import useTheme from '../../context/useTheme';
 function getPalette(isDark) {
   return isDark
     ? {
-        primary: '#4488ff', emissive: '#1144aa', emissiveIntensity: 0.8,
+        primary: '#baff44', emissive: '#1144aa', emissiveIntensity: 0.8,
         wireframe: '#88bbff', light1: '#4488ff', light2: '#88bbff', ambientIntensity: 0.5,
       }
     : {
-        primary: '#2a5db0', emissive: '#1a3d80', emissiveIntensity: 0.5,
-        wireframe: '#5588cc', light1: '#3a6fc8', light2: '#5588cc', ambientIntensity: 0.8,
+        primary: '#3d7cc9', emissive: '#4a6fb5', emissiveIntensity: 0.6,
+        wireframe: '#6b8fd0', light1: '#5c8fe2', light2: '#7ea1e8', ambientIntensity: 0.9,
       };
 }
 
