@@ -46,6 +46,12 @@ const MiniProjects = () => {
             <p className="mini-stack">MultiPle API · Spring Backend</p>
           </a>
           
+          <a href="https://github.com/MJB9595/pythonweb-mjbshop" target="_blank" rel="noreferrer" className="mini-card reveal reveal-delay-1">
+            <div className="mini-icon">🛒</div>
+            <p className="mini-title">쇼핑 스크래퍼</p>
+            <p className="mini-stack">FastAPI · MongoDB</p>
+          </a>
+          
           <a href="https://www.figma.com/file/XwotLsaw8riNRvAUXjxIdw?node-id=569-5&p=f&t=FCOeaGM6INU8ndZZ-0&type=design&mode=design&fuid=1564202928376138181" target="_blank" rel="noreferrer" className="mini-card reveal">
             <div className="mini-icon">🎨</div>
             <p className="mini-title">Figma UI 작업</p>

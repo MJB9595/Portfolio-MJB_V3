@@ -600,6 +600,79 @@ export const useLocaPick = () => {
       ],
     },
   },
+  6: {
+    id: 6,
+    title: "Naver Shopping Scraper",
+    subtitle: "FastAPI 비동기 웹 스크래핑 및 API 연동",
+    period: "2024",
+    type: "Backend · Web Scraping",
+    github: "https://github.com/MJB9595/pythonweb-mjbshop",
+    demo: "https://pythonweb-mjbshop.vercel.app/",
+    stack: ["Python", "FastAPI", "MongoDB Atlas", "aiohttp", "Vanilla JS"],
+    overview:
+      "네이버 쇼핑 Open API를 활용한 상품 검색 및 데이터 저장 웹 애플리케이션입니다. FastAPI 기반의 비동기 백엔드와 MongoDB Atlas를 연동하여 대량의 검색 결과를 빠르게 조회하고 즐겨찾기를 세션 기반으로 관리합니다.",
+    problem:
+      "대량의 상품 검색 시 동기적 HTTP 요청으로 인한 응답 지연이 발생할 수 있으며, 다중 사용자 환경에서 즐겨찾기 데이터가 분리되지 않는 데이터 격리 문제가 존재했습니다.",
+    solution:
+      "aiohttp를 이용해 네이버 API 호출을 비동기로 처리하여 I/O 병목을 해소했습니다. 또한 브라우저 로컬 스토리지와 연동된 고유 세션 ID를 발급하여 MongoDB 쿼리에 적용함으로써 다중 사용자 환경에서도 독립적인 즐겨찾기 관리가 가능하도록 아키텍처를 개선했습니다.",
+    result:
+      "안정적이고 빠른 비동기 검색 API 서버를 구축하였으며, 세션 기반 데이터 격리를 통해 여러 사용자가 동시에 접근해도 자신의 즐겨찾기 항목만 독립적으로 안전하게 관리할 수 있는 시스템을 완성했습니다.",
+    codeHighlights: [
+      {
+        label: "비동기 네이버 쇼핑 검색 (FastAPI + aiohttp)",
+        lang: "python",
+        code: `// shopping_scraper.py
+async def search_shopping(query: str, start: int = 1, display: int = 10, sort: str = "sim"):
+    url = "https://openapi.naver.com/v1/search/shop.json"
+    headers = {
+        "X-Naver-Client-Id": NAVER_API_ID,
+        "X-Naver-Client-Secret": NAVER_API_SECRET
+    }
+    params = {"query": query, "start": start, "display": display, "sort": sort}
+    
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, headers=headers, params=params) as resp:
+            data = await resp.json()
+            return data.get("items", [])`,
+      },
+      {
+        label: "세션 기반 데이터 격리 (MongoDB)",
+        lang: "python",
+        code: `// app/models/__init__.py
+async def save_shopping_item(item_data: dict, session_id: str):
+    item_data["session_id"] = session_id
+    item_data["saved_at"] = datetime.now()
+    
+    # Upsert를 이용한 즐겨찾기 저장 및 갱신
+    await db["shopping_items"].update_one(
+        {"productId": item_data["productId"], "session_id": session_id},
+        {"$set": item_data},
+        upsert=True
+    )`,
+      }
+    ],
+    architecture: [
+      { label: "Client (Vanilla JS)", type: "gold" },
+      { label: "⇌ REST API", type: "arrow" },
+      { label: "FastAPI", type: "normal" },
+      { label: "→ aiohttp", type: "arrow" },
+      { label: "Naver Open API", type: "blue" },
+      { label: "↓ Motor (Async)", type: "arrow" },
+      { label: "MongoDB Atlas", type: "gold" },
+    ],
+    review: {
+      strengths: [
+        "비동기 처리(aiohttp, Motor)를 적극 활용하여 I/O 바운드 작업 최적화",
+        "Open API와 MongoDB를 연결하는 견고한 데이터 파이프라인 구축",
+        "세션 ID 기반으로 다중 사용자 데이터 격리를 자체적으로 구현"
+      ],
+      improvements: [
+        "Redis 캐싱을 도입하여 동일한 검색어에 대한 외부 API 호출 비용 절감 가능",
+        "더욱 견고한 인증(JWT) 및 회원가입 시스템으로 확장 여지",
+        "Frontend를 모던 프레임워크로 분리하여 SPA로 고도화 고려"
+      ],
+    },
+  },
 };
 
 const ProjectsPage = () => {
@@ -1168,6 +1241,102 @@ const ProjectsPage = () => {
                     <i className="fa-solid fa-magnifying-glass-chart"></i> 상세
                     보기
                   </button>
+                </div>
+              </div>
+            </div>
+
+            {/* ── PROJECT 06 ── */}
+            <div className="project-card featured featured-flip reveal">
+              <div className="project-body">
+                <div className="project-tags">
+                  <span className="project-tag">Python</span>
+                  <span className="project-tag">FastAPI</span>
+                  <span className="project-tag">MongoDB</span>
+                  <span className="project-tag">aiohttp</span>
+                </div>
+                <p className="project-num">Project 06</p>
+                <h3 className="project-title">
+                  Naver Shopping Scraper
+                  <br />
+                  비동기 검색 & 세션 관리
+                </h3>
+                <p className="project-desc">
+                  FastAPI와 MongoDB를 활용한 비동기 네이버 쇼핑 웹 스크래핑 및 세션 기반 데이터 관리 서비스.
+                </p>
+                <div className="psr-grid">
+                  <div className="psr-card">
+                    <p className="psr-label">⚡ Async</p>
+                    <p className="psr-text">
+                      aiohttp와 Motor를 활용한 완전 비동기 I/O 파이프라인
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">🔒 Session</p>
+                    <p className="psr-text">
+                      로컬 스토리지 세션 ID 기반 다중 사용자 즐겨찾기 격리
+                    </p>
+                  </div>
+                  <div className="psr-card">
+                    <p className="psr-label">💾 DB</p>
+                    <p className="psr-text">
+                      MongoDB Atlas 연동으로 유연한 데이터 파이프라인 구축
+                    </p>
+                  </div>
+                </div>
+                <div className="project-links">
+                  <a
+                    href="https://github.com/MJB9595/pythonweb-mjbshop"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-brands fa-github"></i> GitHub
+                  </a>
+                  <a
+                    href="https://pythonweb-mjbshop.vercel.app/"
+                    className="project-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>{" "}
+                    Live Demo
+                  </a>
+                  <button
+                    className="project-link project-detail-btn"
+                    onClick={() => openModal(6)}
+                  >
+                    <i className="fa-solid fa-magnifying-glass-chart"></i> 상세 보기
+                  </button>
+                </div>
+              </div>
+              
+              <div className="project-visual">
+                <div className="visual-badge">★ Featured</div>
+                <div className="project-visual-inner">
+                  <div className="code-line">
+                    <span className="code-num">01</span>
+                    <span className="code-comment"># FastAPI Async Web Scraper</span>
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">02</span>
+                    <span className="code-kw">async def</span>{" "}
+                    <span className="code-fn">search_shopping</span>(query):
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">03</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">async with</span>{" "}
+                    aiohttp.ClientSession() <span className="code-kw">as</span> session:
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">04</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span className="code-kw">await</span> session.get(url)
+                  </div>
+                  <div className="code-line">
+                    <span className="code-num">05</span>
+                    <span className="code-comment"># → 빠른 비동기 응답 ✓</span>
+                  </div>
                 </div>
               </div>
             </div>

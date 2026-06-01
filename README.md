@@ -34,6 +34,7 @@
 | **중고 도서 거래 플랫폼** | JSP, Docker, MariaDB | Docker 기반 아키텍처 및 볼륨 설정을 통한 데이터 무결성 확보 | - |
 | **VAIONITY** | Spring Boot, React | 프론트/백엔드 완전 분리 아키텍처 및 Context API 활용 전역 상태 관리 | [GitHub](https://github.com/MJB9595/Fullstack-project) |
 | **LocaPick 장소 추천 알고리즘** | Spring, React, 다중 API | 3개의 지도 API 하이브리드 아키텍처 및 JWT 기반 다차원 정렬 추천 서비스 | [GitHub](https://github.com/MJB9595/LocaPick.git) |
+| **Naver Shopping Scraper** | Python, FastAPI, MongoDB | aiohttp 비동기 처리 및 세션 기반 다중 사용자 즐겨찾기 격리 구현 | [GitHub](https://github.com/MJB9595/pythonweb-mjbshop) |
 
 <br/>
 
