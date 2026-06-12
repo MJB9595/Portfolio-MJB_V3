@@ -27,6 +27,7 @@ const Skils = () => {
             <div className="tech-list">
               <span className="tech-pill hot">Spring Boot</span>
               <span className="tech-pill hot">Java</span>
+              <span className="tech-pill hot">Python</span>
               <span className="tech-pill">JSP / Tomcat</span>
               <span className="tech-pill">RESTful API</span>
             </div>
@@ -43,10 +44,9 @@ const Skils = () => {
             <div className="tech-group-title"><i className="fa-solid fa-gear"></i> Infra & Tools</div>
             <div className="tech-list">
               <span className="tech-pill hot">Docker</span>
-              <span className="tech-pill hot">Python</span>
+              <span className="tech-pill hot">NAS (Synology)</span>
               <span className="tech-pill">Linux (Ubuntu)</span>
               <span className="tech-pill">Git / GitHub</span>
-              <span className="tech-pill">NAS (Synology)</span>
             </div>
           </div>
         </div>
